@@ -25,20 +25,19 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#9b87f5",
-          light: "#b8a8f7",
-          dark: "#7e69ab",
+          DEFAULT: "#86508C", // Uva Encantada
+          light: "#9B6AA0",
+          dark: "#6E3E73",
         },
         secondary: {
-          DEFAULT: "#6E59A5",
-          light: "#8E78BD",
-          dark: "#4E3D7D",
+          DEFAULT: "#CE3784", // Chiclete Mágico
+          light: "#D85B9A",
+          dark: "#A82C6A",
         },
         accent: {
-          orange: "#FEC6A1",
-          pink: "#FFDEE2",
-          yellow: "#FEF7CD",
-          blue: "#D3E4FD",
+          orange: "#D95F2C", // Laranja Aventura
+          yellow: "#E4C340", // Sol Brilhante
+          blue: "#81A8B7", // Céu dos Sonhos
         },
         neutral: {
           DEFAULT: "#8E9196",

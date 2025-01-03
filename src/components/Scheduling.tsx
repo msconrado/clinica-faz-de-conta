@@ -1,17 +1,9 @@
-import { useState, useEffect } from "react";
-import { Calendar } from "@/components/ui/calendar";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { ptBR } from "date-fns/locale";
 import { format } from "date-fns";
+import SchedulingForm from "./scheduling/SchedulingForm";
+import { addToGoogleCalendar } from "@/services/googleCalendar";
 
 const Scheduling = () => {
   const [date, setDate] = useState<Date>();
@@ -40,52 +32,14 @@ const Scheduling = () => {
     "Pilates",
   ];
 
-  // Função para carregar horários agendados do localStorage
-  useEffect(() => {
-    const savedBookings = localStorage.getItem('bookedSlots');
-    if (savedBookings) {
-      setBookedSlots(JSON.parse(savedBookings));
-    }
-  }, []);
-
-  // Função para salvar novo agendamento
-  const saveBooking = (selectedDate: string, selectedTime: string) => {
-    const updatedBookings = {
-      ...bookedSlots,
-      [selectedDate]: [...(bookedSlots[selectedDate] || []), selectedTime]
-    };
-    setBookedSlots(updatedBookings);
-    localStorage.setItem('bookedSlots', JSON.stringify(updatedBookings));
-  };
-
-  // Função para verificar se o horário está disponível
   const isTimeAvailable = (selectedTime: string) => {
     if (!date) return true;
     const dateKey = format(date, "yyyy-MM-dd");
     return !bookedSlots[dateKey]?.includes(selectedTime);
   };
 
-  // Filtra horários disponíveis baseado na data selecionada
   const getAvailableTimesForDate = () => {
     return availableTimes.filter(time => isTimeAvailable(time));
-  };
-
-  const receiveWhatsAppMessage = async (phoneNumber: string) => {
-    // Remove caracteres não numéricos do telefone
-    const cleanPhone = phoneNumber.replace(/\D/g, "");
-    
-    // Formata a data para exibição
-    const formattedDate = date ? format(date, "dd/MM/yyyy") : "";
-    
-    // Monta a mensagem
-    const message = `Olá! Gostaria de agendar uma consulta para ${formattedDate} às ${time}. Serviço: ${service}. Nome: ${name}`;
-    
-    // URL do WhatsApp da clínica
-    const clinicPhone = "5531999999999"; // Substitua pelo número da clínica
-    const whatsappUrl = `https://wa.me/${clinicPhone}?text=${encodeURIComponent(message)}`;
-    
-    // Abre o WhatsApp em uma nova janela
-    window.open(whatsappUrl, "_blank");
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -97,19 +51,22 @@ const Scheduling = () => {
     }
 
     try {
+      // Adiciona ao Google Calendar
+      addToGoogleCalendar(name, service, date, time);
+      
+      // Atualiza slots ocupados
       const dateKey = format(date, "yyyy-MM-dd");
+      const updatedBookings = {
+        ...bookedSlots,
+        [dateKey]: [...(bookedSlots[dateKey] || []), time]
+      };
+      setBookedSlots(updatedBookings);
       
-      // Verifica novamente se o horário ainda está disponível
-      if (!isTimeAvailable(time)) {
-        toast.error("Este horário já foi agendado. Por favor, escolha outro horário.");
-        return;
-      }
-
-      // Salva o agendamento
-      saveBooking(dateKey, time);
-      
-      // Envia a mensagem do WhatsApp
-      await receiveWhatsAppMessage(phone);
+      // Envia mensagem para WhatsApp da clínica
+      const message = `Olá! Gostaria de agendar uma consulta para ${format(date, "dd/MM/yyyy")} às ${time}. Serviço: ${service}. Nome: ${name}`;
+      const clinicPhone = "5531999999999"; // Substitua pelo número da clínica
+      const whatsappUrl = `https://wa.me/${clinicPhone}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, "_blank");
       
       toast.success("Solicitação de agendamento enviada! Aguarde a confirmação da clínica.");
       
@@ -120,8 +77,8 @@ const Scheduling = () => {
       setName("");
       setPhone("");
     } catch (error) {
-      console.error("Erro ao enviar mensagem:", error);
-      toast.error("Erro ao enviar mensagem. Por favor, tente novamente.");
+      console.error("Erro ao agendar:", error);
+      toast.error("Erro ao enviar agendamento. Por favor, tente novamente.");
     }
   };
 
@@ -138,88 +95,22 @@ const Scheduling = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-lg shadow-lg">
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Nome Completo
-              </label>
-              <Input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Digite seu nome completo"
-                className="w-full bg-white border-gray-300"
-              />
-            </div>
+          <SchedulingForm
+            name={name}
+            setName={setName}
+            phone={phone}
+            setPhone={setPhone}
+            service={service}
+            setService={setService}
+            date={date}
+            setDate={setDate}
+            time={time}
+            setTime={setTime}
+            availableTimes={getAvailableTimesForDate()}
+            services={services}
+          />
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Telefone
-              </label>
-              <Input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                placeholder="(00) 00000-0000"
-                className="w-full bg-white border-gray-300"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Serviço
-              </label>
-              <Select value={service} onValueChange={setService}>
-                <SelectTrigger className="bg-white border-gray-300">
-                  <SelectValue placeholder="Selecione o serviço" />
-                </SelectTrigger>
-                <SelectContent>
-                  {services.map((service) => (
-                    <SelectItem key={service} value={service}>
-                      {service}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Data
-              </label>
-              <Calendar
-                mode="single"
-                selected={date}
-                onSelect={(newDate) => {
-                  setDate(newDate);
-                  setTime(undefined); // Reseta o horário quando a data muda
-                }}
-                locale={ptBR}
-                className="rounded-md border bg-white"
-                disabled={(date) => date < new Date() || date.getDay() === 0}
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Horário
-              </label>
-              <Select value={time} onValueChange={setTime}>
-                <SelectTrigger className="bg-white border-gray-300">
-                  <SelectValue placeholder="Selecione o horário" />
-                </SelectTrigger>
-                <SelectContent>
-                  {getAvailableTimesForDate().map((time) => (
-                    <SelectItem key={time} value={time}>
-                      {time}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-
-          <Button type="submit" className="w-full">
+          <Button type="submit" className="w-full bg-primary hover:bg-primary-dark text-white">
             Solicitar Agendamento
           </Button>
         </form>
