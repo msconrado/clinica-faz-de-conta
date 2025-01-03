@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,6 +19,7 @@ const Scheduling = () => {
   const [service, setService] = useState<string>();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [bookedSlots, setBookedSlots] = useState<{[key: string]: string[]}>({});
 
   const availableTimes = [
     "08:00",
@@ -39,7 +40,37 @@ const Scheduling = () => {
     "Pilates",
   ];
 
-  const sendWhatsAppMessage = async (phoneNumber: string) => {
+  // Função para carregar horários agendados do localStorage
+  useEffect(() => {
+    const savedBookings = localStorage.getItem('bookedSlots');
+    if (savedBookings) {
+      setBookedSlots(JSON.parse(savedBookings));
+    }
+  }, []);
+
+  // Função para salvar novo agendamento
+  const saveBooking = (selectedDate: string, selectedTime: string) => {
+    const updatedBookings = {
+      ...bookedSlots,
+      [selectedDate]: [...(bookedSlots[selectedDate] || []), selectedTime]
+    };
+    setBookedSlots(updatedBookings);
+    localStorage.setItem('bookedSlots', JSON.stringify(updatedBookings));
+  };
+
+  // Função para verificar se o horário está disponível
+  const isTimeAvailable = (selectedTime: string) => {
+    if (!date) return true;
+    const dateKey = format(date, "yyyy-MM-dd");
+    return !bookedSlots[dateKey]?.includes(selectedTime);
+  };
+
+  // Filtra horários disponíveis baseado na data selecionada
+  const getAvailableTimesForDate = () => {
+    return availableTimes.filter(time => isTimeAvailable(time));
+  };
+
+  const receiveWhatsAppMessage = async (phoneNumber: string) => {
     // Remove caracteres não numéricos do telefone
     const cleanPhone = phoneNumber.replace(/\D/g, "");
     
@@ -47,10 +78,11 @@ const Scheduling = () => {
     const formattedDate = date ? format(date, "dd/MM/yyyy") : "";
     
     // Monta a mensagem
-    const message = `Olá ${name}! Seu agendamento foi confirmado para ${formattedDate} às ${time}. Serviço: ${service}. Aguardamos você! - Clínica Faz de Conta`;
+    const message = `Olá! Gostaria de agendar uma consulta para ${formattedDate} às ${time}. Serviço: ${service}. Nome: ${name}`;
     
-    // URL do WhatsApp com a mensagem
-    const whatsappUrl = `https://wa.me/55${cleanPhone}?text=${encodeURIComponent(message)}`;
+    // URL do WhatsApp da clínica
+    const clinicPhone = "5531999999999"; // Substitua pelo número da clínica
+    const whatsappUrl = `https://wa.me/${clinicPhone}?text=${encodeURIComponent(message)}`;
     
     // Abre o WhatsApp em uma nova janela
     window.open(whatsappUrl, "_blank");
@@ -65,10 +97,21 @@ const Scheduling = () => {
     }
 
     try {
-      // Envia a mensagem do WhatsApp
-      await sendWhatsAppMessage(phone);
+      const dateKey = format(date, "yyyy-MM-dd");
       
-      toast.success("Agendamento realizado com sucesso! Verifique seu WhatsApp.");
+      // Verifica novamente se o horário ainda está disponível
+      if (!isTimeAvailable(time)) {
+        toast.error("Este horário já foi agendado. Por favor, escolha outro horário.");
+        return;
+      }
+
+      // Salva o agendamento
+      saveBooking(dateKey, time);
+      
+      // Envia a mensagem do WhatsApp
+      await receiveWhatsAppMessage(phone);
+      
+      toast.success("Solicitação de agendamento enviada! Aguarde a confirmação da clínica.");
       
       // Limpa o formulário
       setDate(undefined);
@@ -78,7 +121,7 @@ const Scheduling = () => {
       setPhone("");
     } catch (error) {
       console.error("Erro ao enviar mensagem:", error);
-      toast.error("Erro ao enviar mensagem de confirmação. Por favor, tente novamente.");
+      toast.error("Erro ao enviar mensagem. Por favor, tente novamente.");
     }
   };
 
@@ -105,7 +148,7 @@ const Scheduling = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Digite seu nome completo"
-                className="w-full"
+                className="w-full bg-white border-gray-300"
               />
             </div>
 
@@ -118,7 +161,7 @@ const Scheduling = () => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="(00) 00000-0000"
-                className="w-full"
+                className="w-full bg-white border-gray-300"
               />
             </div>
 
@@ -127,7 +170,7 @@ const Scheduling = () => {
                 Serviço
               </label>
               <Select value={service} onValueChange={setService}>
-                <SelectTrigger>
+                <SelectTrigger className="bg-white border-gray-300">
                   <SelectValue placeholder="Selecione o serviço" />
                 </SelectTrigger>
                 <SelectContent>
@@ -147,9 +190,12 @@ const Scheduling = () => {
               <Calendar
                 mode="single"
                 selected={date}
-                onSelect={setDate}
+                onSelect={(newDate) => {
+                  setDate(newDate);
+                  setTime(undefined); // Reseta o horário quando a data muda
+                }}
                 locale={ptBR}
-                className="rounded-md border"
+                className="rounded-md border bg-white"
                 disabled={(date) => date < new Date() || date.getDay() === 0}
               />
             </div>
@@ -159,11 +205,11 @@ const Scheduling = () => {
                 Horário
               </label>
               <Select value={time} onValueChange={setTime}>
-                <SelectTrigger>
+                <SelectTrigger className="bg-white border-gray-300">
                   <SelectValue placeholder="Selecione o horário" />
                 </SelectTrigger>
                 <SelectContent>
-                  {availableTimes.map((time) => (
+                  {getAvailableTimesForDate().map((time) => (
                     <SelectItem key={time} value={time}>
                       {time}
                     </SelectItem>
@@ -174,7 +220,7 @@ const Scheduling = () => {
           </div>
 
           <Button type="submit" className="w-full">
-            Agendar Consulta
+            Solicitar Agendamento
           </Button>
         </form>
       </div>
