@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { ptBR } from "date-fns/locale";
+import { format } from "date-fns";
 
 const Scheduling = () => {
   const [date, setDate] = useState<Date>();
@@ -38,7 +39,24 @@ const Scheduling = () => {
     "Pilates",
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const sendWhatsAppMessage = async (phoneNumber: string) => {
+    // Remove caracteres não numéricos do telefone
+    const cleanPhone = phoneNumber.replace(/\D/g, "");
+    
+    // Formata a data para exibição
+    const formattedDate = date ? format(date, "dd/MM/yyyy") : "";
+    
+    // Monta a mensagem
+    const message = `Olá ${name}! Seu agendamento foi confirmado para ${formattedDate} às ${time}. Serviço: ${service}. Aguardamos você! - Clínica Faz de Conta`;
+    
+    // URL do WhatsApp com a mensagem
+    const whatsappUrl = `https://wa.me/55${cleanPhone}?text=${encodeURIComponent(message)}`;
+    
+    // Abre o WhatsApp em uma nova janela
+    window.open(whatsappUrl, "_blank");
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!date || !time || !service || !name || !phone) {
@@ -46,15 +64,22 @@ const Scheduling = () => {
       return;
     }
 
-    // Aqui você pode adicionar a lógica para enviar os dados do agendamento
-    toast.success("Agendamento realizado com sucesso! Entraremos em contato para confirmar.");
-    
-    // Limpar o formulário
-    setDate(undefined);
-    setTime(undefined);
-    setService(undefined);
-    setName("");
-    setPhone("");
+    try {
+      // Envia a mensagem do WhatsApp
+      await sendWhatsAppMessage(phone);
+      
+      toast.success("Agendamento realizado com sucesso! Verifique seu WhatsApp.");
+      
+      // Limpa o formulário
+      setDate(undefined);
+      setTime(undefined);
+      setService(undefined);
+      setName("");
+      setPhone("");
+    } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      toast.error("Erro ao enviar mensagem de confirmação. Por favor, tente novamente.");
+    }
   };
 
   return (
