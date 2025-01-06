@@ -8,18 +8,17 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative">
-      <div className="absolute inset-0 bg-pattern opacity-10"></div>
-      <div className="max-w-7xl mx-auto relative">
+    <section id="home" className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center">
           <img
-            src="/lovable-uploads/65e9e25a-023c-4f0a-b28c-0b69fd40577f.png"
+            src="/lovable-uploads/5153ce02-c9aa-401b-9c7e-92377161bd70.png"
             alt="Faz de Conta Logo"
             className="mx-auto mb-8 w-64 sm:w-96"
           />
-             <p className="text-lg sm:text-xl text-neutral-dark mb-8 max-w-2xl mx-auto">
-                Um espaço feito de sorrisos e descobertas.
-            </p>
+          <p className="text-lg sm:text-xl text-neutral-dark mb-8 max-w-2xl mx-auto">
+            Um espaço feito de sorrisos e descobertas.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               className="bg-primary hover:bg-primary-dark text-white text-lg px-8 py-6 flex items-center gap-2"

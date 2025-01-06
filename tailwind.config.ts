@@ -50,7 +50,8 @@ export default {
         como: ["Como", "sans-serif"],
       },
       backgroundImage: {
-        'pattern': "url('/lovable-uploads/847630e0-8754-41b6-ad07-2c824e0219a5.png')",
+        'formas': "url('/lovable-uploads/f5feb93e-12fd-4081-a335-bdaf9336b529.png')",
+        'prancheta19': "url('/lovable-uploads/487c9d54-217e-42ca-8715-393ceb3dca9f.png')",
       },
       borderRadius: {
         lg: "var(--radius)",
