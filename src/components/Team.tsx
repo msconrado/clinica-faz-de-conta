@@ -18,19 +18,21 @@ const Team = () => {
   return (
     <section id="team" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-primary-dark mb-8 font-hoss text-center">
-          Conheça Nossa Equipe
+        <h2 className="text-3xl sm:text-4xl font-bold text-primary-dark mb-8 font-hoss text-center uppercase">
+          CONHEÇA NOSSA EQUIPE
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {team.map((member) => (
-            <Card key={member.name} className="overflow-hidden">
-              <CardContent className="p-0">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-6">
+            <Card key={member.name} className="overflow-hidden bg-transparent border-none shadow-none">
+              <CardContent className="p-0 flex flex-col items-center">
+                <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="text-center">
                   <h3 className="text-xl font-bold text-primary-dark mb-2 font-hoss">
                     {member.name}
                   </h3>
