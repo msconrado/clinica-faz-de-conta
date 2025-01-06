@@ -1,4 +1,4 @@
-import { Mail, MapPin, WhatsApp } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -16,7 +16,7 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-              <WhatsApp className="w-6 h-6 text-primary" />
+              <MessageCircle className="w-6 h-6 text-primary" />
             </div>
             <h3 className="text-xl font-semibold text-primary-dark mb-2 font-hoss">WhatsApp</h3>
             <a 
