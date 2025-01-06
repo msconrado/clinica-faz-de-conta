@@ -6,13 +6,8 @@ const Team = () => {
       name: "Dra. Mylena Tabelini",
       role: "Fisioterapeuta",
       position: "Responsável técnica",
-      image: "https://source.unsplash.com/random/400x400/?therapist",
-    },
-    {
-      name: "Dra. Eduarda",
-      role: "Fisioterapeuta",
-      image: "https://source.unsplash.com/random/400x400/?doctor",
-    },
+      image: "/lovable-uploads/352624de-41cb-4fad-8575-694ce529900a.png",
+    }
   ];
 
   return (
@@ -21,9 +16,9 @@ const Team = () => {
         <h2 className="text-3xl sm:text-4xl font-bold text-primary-dark mb-8 font-hoss text-center uppercase">
           CONHEÇA NOSSA EQUIPE
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="flex justify-center">
           {team.map((member) => (
-            <Card key={member.name} className="overflow-hidden bg-transparent border-none shadow-none">
+            <Card key={member.name} className="overflow-hidden bg-transparent border-none shadow-none max-w-md">
               <CardContent className="p-0 flex flex-col items-center">
                 <div className="w-48 h-48 rounded-full overflow-hidden mb-4">
                   <img

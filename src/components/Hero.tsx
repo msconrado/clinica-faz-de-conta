@@ -8,13 +8,13 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="pt-24 pb-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto w-full">
         <div className="text-center">
           <img
             src="/lovable-uploads/5153ce02-c9aa-401b-9c7e-92377161bd70.png"
             alt="Faz de Conta Logo"
-            className="mx-auto mb-8 w-64 sm:w-96"
+            className="w-full max-w-3xl mx-auto mb-8"
           />
           <p className="text-lg sm:text-xl text-neutral-dark mb-8 max-w-2xl mx-auto">
             Um espaço feito de sorrisos e descobertas.
