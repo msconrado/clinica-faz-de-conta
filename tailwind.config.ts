@@ -25,25 +25,32 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#86508C", // Uva Encantada
+          DEFAULT: "#86508C",
           light: "#9B6AA0",
           dark: "#6E3E73",
         },
         secondary: {
-          DEFAULT: "#CE3784", // Chiclete Mágico
+          DEFAULT: "#CE3784",
           light: "#D85B9A",
           dark: "#A82C6A",
         },
         accent: {
-          orange: "#D95F2C", // Laranja Aventura
-          yellow: "#E4C340", // Sol Brilhante
-          blue: "#81A8B7", // Céu dos Sonhos
+          orange: "#D95F2C",
+          yellow: "#E4C340",
+          blue: "#81A8B7",
         },
         neutral: {
           DEFAULT: "#8E9196",
           light: "#C8C8C9",
           dark: "#222222",
         },
+      },
+      fontFamily: {
+        hoss: ["Hoss Round", "sans-serif"],
+        como: ["Como", "sans-serif"],
+      },
+      backgroundImage: {
+        'pattern': "url('/lovable-uploads/847630e0-8754-41b6-ad07-2c824e0219a5.png')",
       },
       borderRadius: {
         lg: "var(--radius)",

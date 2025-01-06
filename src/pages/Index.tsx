@@ -3,7 +3,10 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import Scheduling from "@/components/Scheduling";
+import About from "@/components/About";
+import Structure from "@/components/Structure";
+import Team from "@/components/Team";
+import Mission from "@/components/Mission";
 
 const Index = () => {
   return (
@@ -11,8 +14,11 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <About />
+        <Structure />
         <Services />
-        <Scheduling />
+        <Mission />
+        <Team />
         <Contact />
       </main>
       <Footer />
