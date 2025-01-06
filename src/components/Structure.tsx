@@ -18,8 +18,8 @@ const Structure = () => {
   return (
     <section id="structure" className="py-16 px-4 sm:px-6 lg:px-8 bg-accent-blue/10">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-primary-dark mb-8 font-hoss text-center">
-          Nossa Estrutura
+        <h2 className="text-3xl sm:text-4xl font-bold text-primary-dark mb-8 font-hoss text-center uppercase">
+          NOSSA ESTRUTURA
         </h2>
         <Carousel className="w-full max-w-4xl mx-auto">
           <CarouselContent>

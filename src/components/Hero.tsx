@@ -13,10 +13,13 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto relative">
         <div className="text-center">
           <img
-            src="/lovable-uploads/73603ab0-7e58-4602-aff0-f654a4fe2b8d.png"
+            src="/lovable-uploads/65e9e25a-023c-4f0a-b28c-0b69fd40577f.png"
             alt="Faz de Conta Logo"
             className="mx-auto mb-8 w-64 sm:w-96"
           />
+             <p className="text-lg sm:text-xl text-neutral-dark mb-8 max-w-2xl mx-auto">
+                Um espaço feito de sorrisos e descobertas.
+            </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               className="bg-primary hover:bg-primary-dark text-white text-lg px-8 py-6 flex items-center gap-2"

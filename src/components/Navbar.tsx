@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <img
-              src="/lovable-uploads/65e9e25a-023c-4f0a-b28c-0b69fd40577f.png"
+              src="/lovable-uploads/73603ab0-7e58-4602-aff0-f654a4fe2b8d.png"
               alt="Faz de Conta"
               className="h-8 w-auto"
             />
