@@ -21,7 +21,7 @@ const Hero = ({ whatsappNumber = "5531975051502" }: HeroProps) => {
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center">
           <img
-            src="/lovable-uploads/5153ce02-c9aa-401b-9c7e-92377161bd70.png"
+            src="/lovable-uploads/22ce0213-469c-4842-82a3-28e0f205347b.png"
             alt="Faz de Conta Logo"
             className="w-full max-w-4xl mx-auto mb-8"
           />
