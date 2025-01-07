@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 const Mission = () => {
   return (
     <section id="mission" className="py-16 px-4 sm:px-6 lg:px-8 bg-accent-blue/10 relative overflow-hidden">
-      <div className="absolute left-0 top-0 w-1/3 h-full bg-prancheta19 bg-contain bg-no-repeat bg-left opacity-20" />
+      <div className="absolute left-0 top-0 w-full h-full bg-prancheta19 bg-contain bg-no-repeat bg-left opacity-20 sm:w-1/3" />
       <div className="max-w-7xl mx-auto relative">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary-dark mb-8 font-hoss text-center uppercase">
           MISSÃO, VISÃO E VALORES

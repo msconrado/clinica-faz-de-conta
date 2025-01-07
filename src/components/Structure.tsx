@@ -16,7 +16,7 @@ const Structure = () => {
 
   return (
     <section id="structure" className="py-16 px-4 sm:px-6 lg:px-8 bg-accent-blue/10 relative overflow-hidden">
-      <div className="absolute right-0 top-0 w-1/3 h-full bg-formas bg-contain bg-no-repeat bg-right opacity-20" />
+      <div className="absolute right-0 top-0 w-full h-full bg-formas bg-contain bg-no-repeat bg-right opacity-20 sm:w-1/3" />
       <div className="max-w-7xl mx-auto relative">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary-dark mb-8 font-hoss text-center uppercase">
           NOSSA ESTRUTURA

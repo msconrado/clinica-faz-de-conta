@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center">
           <img
-            src="/lovable-uploads/5153ce02-c9aa-401b-9c7e-92377161bd70.png"
+            src="/lovable-uploads/487c9d54-217e-42ca-8715-393ceb3dca9f.png"
             alt="Faz de Conta Logo"
             className="w-full max-w-3xl mx-auto mb-8"
           />
