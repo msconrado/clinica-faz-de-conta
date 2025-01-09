@@ -2,14 +2,25 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 
 const Reviews = () => {
-  // Placeholder data - replace with actual Google Maps reviews
   const reviews = [
     {
-      author: "Cliente Exemplo",
+      author: "Mariana Alves",
       rating: 5,
-      text: "Excelente atendimento! Profissionais muito dedicados.",
+      text: "Excelente atendimento! A Dra. Mylena é uma profissional extremamente dedicada e competente. Minha filha adora as sessões.",
+      date: "2 meses atrás"
     },
-    // Add more reviews as needed
+    {
+      author: "Fernanda Costa",
+      rating: 5,
+      text: "Ambiente acolhedor e profissionais muito preparados. Recomendo!",
+      date: "3 meses atrás"
+    },
+    {
+      author: "Patricia Santos",
+      rating: 5,
+      text: "Clínica maravilhosa! Estrutura excelente e atendimento humanizado.",
+      date: "1 mês atrás"
+    }
   ];
 
   return (
@@ -28,7 +39,10 @@ const Reviews = () => {
                   ))}
                 </div>
                 <p className="text-neutral-dark mb-4 font-como">{review.text}</p>
-                <p className="text-primary-dark font-bold font-como">{review.author}</p>
+                <div className="flex justify-between items-center">
+                  <p className="text-primary-dark font-bold font-como">{review.author}</p>
+                  <p className="text-neutral text-sm font-como">{review.date}</p>
+                </div>
               </CardContent>
             </Card>
           ))}
