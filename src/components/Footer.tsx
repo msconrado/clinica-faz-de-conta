@@ -46,11 +46,29 @@ const Footer = () => {
       
       <Button
         onClick={scrollToTop}
-        className="fixed bottom-4 right-4 bg-primary hover:bg-primary-dark text-white rounded-full p-2"
+        className="fixed bottom-4 right-4 bg-primary hover:bg-primary-dark text-white rounded-full p-2 shadow-lg"
         size="icon"
       >
         <ArrowUp className="w-5 h-5" />
       </Button>
+
+      <a
+        href="https://wa.me/5531975051502"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-4 left-4"
+      >
+        <Button
+          className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full p-2 shadow-lg"
+          size="icon"
+        >
+          <img
+            src="/lovable-uploads/e26a6eb6-b160-4c8f-98a5-ce7f152fba26.png"
+            alt="WhatsApp"
+            className="w-5 h-5"
+          />
+        </Button>
+      </a>
     </footer>
   );
 };
