@@ -52,11 +52,6 @@ const LinkTree = () => {
     <section className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md mx-auto space-y-4">
         <div className="text-center mb-8">
-          <img
-            src="/lovable-uploads/d96807a6-0ea0-467d-a44f-f29335b36c59.png"
-            alt="Faz de Conta Logo"
-            className="w-32 h-32 mx-auto mb-4 rounded-full bg-white shadow-lg"
-          />
           <p className="text-lg font-como text-accent-orange font-bold">
             AQUI, A IMAGINAÇÃO GANHA ASAS.
           </p>
