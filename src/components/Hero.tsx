@@ -1,18 +1,20 @@
-export default Hero;
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+
 interface HeroProps {
   whatsappNumber?: string;
 }
+
 const Hero = ({ whatsappNumber = "5531975051502" }: HeroProps) => {
   const handleWhatsAppClick = () => {
     const message = "Olá! Gostaria de agendar uma consulta na Clínica Faz de Conta.";
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
+
   const scrollToServices = () => {
     const servicesSection = document.getElementById("services");
     servicesSection?.scrollIntoView({ behavior: "smooth" });
-@@ -18,34 +1,9 @@
+  };
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -47,3 +49,5 @@ const Hero = ({ whatsappNumber = "5531975051502" }: HeroProps) => {
     </section>
   );
 };
+
+export default Hero;
