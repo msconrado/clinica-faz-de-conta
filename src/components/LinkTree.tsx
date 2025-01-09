@@ -1,14 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar } from "lucide-react";
-import QRCode from "./QRCode";
-
 const LinkTree = () => {
   const handleWhatsAppClick = (message?: string) => {
     const text = message || "Olá! Gostaria de agendar uma consulta na Clínica Faz de Conta.";
     window.open(`https://wa.me/5531975051502?text=${encodeURIComponent(text)}`, "_blank");
   };
-
   const links = [
     {
       title: "Instagram",
@@ -47,11 +44,15 @@ const LinkTree = () => {
       bgColor: "bg-primary-light",
     },
   ];
-
   return (
     <section className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md mx-auto space-y-4">
         <div className="text-center mb-8">
+          <img
+            src="/lovable-uploads/73603ab0-7e58-4602-aff0-f654a4fe2b8d.png"
+            alt="Faz de Conta Logo"
+            className="w-32 h-32 mx-auto mb-4 rounded-full bg-white shadow-lg"
+          />
           <p className="text-lg font-como text-accent-orange font-bold">
             AQUI, A IMAGINAÇÃO GANHA ASAS.
           </p>
@@ -85,11 +86,8 @@ const LinkTree = () => {
             )}
           </Button>
         ))}
-        
-        <QRCode />
       </div>
     </section>
   );
 };
-
 export default LinkTree;
