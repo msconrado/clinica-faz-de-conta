@@ -17,11 +17,24 @@ const QRCode = () => {
         canvas.height = img.height;
         const ctx = canvas.getContext("2d");
         if (ctx) {
+          ctx.fillStyle = "white";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
           ctx.drawImage(img, 0, 0);
-          const link = document.createElement("a");
-          link.download = "qrcode-clinica-faz-de-conta.png";
-          link.href = canvas.toDataURL("image/png");
-          link.click();
+          
+          // Add logo
+          const logo = new Image();
+          logo.onload = () => {
+            const logoSize = 40;
+            const logoX = (canvas.width - logoSize) / 2;
+            const logoY = (canvas.height - logoSize) / 2;
+            ctx.drawImage(logo, logoX, logoY, logoSize, logoSize);
+            
+            const link = document.createElement("a");
+            link.download = "qrcode-clinica-faz-de-conta.png";
+            link.href = canvas.toDataURL("image/png");
+            link.click();
+          };
+          logo.src = "/lovable-uploads/73603ab0-7e58-4602-aff0-f654a4fe2b8d.png";
         }
       };
       img.src = "data:image/svg+xml;base64," + btoa(svgData);
