@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Como';
+  src: url('/fonts/fonnts.com-Como_Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Hoss Round';
+  src: url('/fonts/fonnts.com-Hoss_Round_Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
