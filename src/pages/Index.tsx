@@ -23,9 +23,9 @@ const Index = () => {
         <Mission />
         <Team />
         <Contact />
-        <div className="py-12">
+        {/* <div className="py-12">
           <QRCode />
-        </div>
+        </div> */}
       </main>
       <Footer />
     </div>
