@@ -8,6 +8,7 @@ import Structure from "@/components/Structure";
 import Pillars from "@/components/Pillars";
 import Team from "@/components/Team";
 import Mission from "@/components/Mission";
+import QRCode from "@/components/QRCode";
 
 const Index = () => {
   return (
@@ -22,6 +23,9 @@ const Index = () => {
         <Mission />
         <Team />
         <Contact />
+        <div className="py-12">
+          <QRCode />
+        </div>
       </main>
       <Footer />
     </div>

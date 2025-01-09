@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import { Download } from "lucide-react";
 
 const QRCode = () => {
-  const currentUrl = window.location.href;
+  const linktreeUrl = window.location.origin + "/linktree";
 
   const handleDownload = () => {
     const canvas = document.createElement("canvas");
@@ -33,7 +33,7 @@ const QRCode = () => {
       <CardContent className="p-6 text-center">
         <QRCodeSVG
           id="qr-code"
-          value={currentUrl}
+          value={linktreeUrl}
           size={200}
           level="H"
           imageSettings={{
