@@ -5,7 +5,8 @@ const Pillars = () => {
     "Humanização",
     "Respeito",
     "Ética",
-    "Inclusão"
+    "Inclusão",
+    "Acessibilidade"
   ];
 
   return (
@@ -14,7 +15,7 @@ const Pillars = () => {
         <h2 className="text-3xl sm:text-4xl font-bold text-primary-dark mb-8 font-hoss text-center uppercase">
           PILARES
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
           {pillars.map((pillar, index) => (
             <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow">
               <CardContent className="p-6 text-center">

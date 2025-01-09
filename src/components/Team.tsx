@@ -5,6 +5,7 @@ const Team = () => {
     {
       name: "Dra. Mylena Tabelini",
       role: "Fisioterapeuta",
+      crefito: "CREFITO-4/370024.F",
       position: "Responsável técnica",
       image: "/lovable-uploads/352624de-41cb-4fad-8575-694ce529900a.png",
     }
@@ -32,9 +33,8 @@ const Team = () => {
                     {member.name}
                   </h3>
                   <p className="text-neutral-dark font-como">{member.role}</p>
-                  {member.position && (
-                    <p className="text-neutral-dark font-como">{member.position}</p>
-                  )}
+                  <p className="text-neutral-dark font-como">{member.crefito}</p>
+                  <p className="text-neutral-dark font-como">{member.position}</p>
                 </div>
               </CardContent>
             </Card>

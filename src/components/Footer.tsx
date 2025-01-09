@@ -1,8 +1,13 @@
-import { Instagram } from "lucide-react";
+import { Instagram, ArrowUp, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer className="bg-accent-blue/20 py-8 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-accent-blue/20 py-8 px-4 sm:px-6 lg:px-8 relative">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
@@ -14,6 +19,14 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-6 mb-4 md:mb-0">
+            <a
+              href="https://wa.me/5531975051502"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-dark hover:text-primary transition-colors"
+            >
+              <MessageCircle className="w-6 h-6" />
+            </a>
             <a
               href="https://www.instagram.com/clinicafazdeconta"
               target="_blank"
@@ -30,6 +43,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      
+      <Button
+        onClick={scrollToTop}
+        className="fixed bottom-4 right-4 bg-primary hover:bg-primary-dark text-white rounded-full p-2"
+        size="icon"
+      >
+        <ArrowUp className="w-5 h-5" />
+      </Button>
     </footer>
   );
 };

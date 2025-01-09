@@ -17,13 +17,13 @@ const Hero = ({ whatsappNumber = "5531975051502" }: HeroProps) => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
+    <section id="home" className="min-h-[80vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto w-full">
         <div className="text-center">
           <img
             src="/lovable-uploads/22ce0213-469c-4842-82a3-28e0f205347b.png"
             alt="Faz de Conta Logo"
-            className="w-full max-w-4xl mx-auto mb-8"
+            className="w-full max-w-3xl mx-auto mb-6"
           />
           <p className="text-lg sm:text-xl text-neutral-dark mb-8 max-w-2xl mx-auto font-como">
             Um espaço feito de sorrisos e descobertas.
