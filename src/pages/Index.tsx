@@ -9,7 +9,6 @@ import Team from "@/components/Team";
 import Reviews from "@/components/Reviews";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import QRCode from "@/components/QRCode";
 
 const Index = () => {
   return (
@@ -25,9 +24,6 @@ const Index = () => {
         <Team />
         <Reviews />
         <Contact />
-        <div className="py-12">
-          <QRCode />
-        </div>
       </main>
       <Footer />
     </div>
