@@ -33,7 +33,7 @@ const Contact = () => {
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
               <Mail className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold text-primary-dark mb-2 font-hoss">Email</h3>
+            <h3 className="text-xl font-semibold text-primary-dark mb-2 font-hoss">E-mail</h3>
             <a 
               href="mailto:clinicafazdeconta@gmail.com" 
               className="text-neutral-dark hover:text-primary transition-colors font-como"
