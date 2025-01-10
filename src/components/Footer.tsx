@@ -59,13 +59,13 @@ const Footer = () => {
         className="fixed bottom-4 left-4"
       >
         <Button
-          className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full p-2 shadow-lg"
+          className="bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full p-3 shadow-lg w-16 h-16"
           size="icon"
         >
           <img
             src="/lovable-uploads/e26a6eb6-b160-4c8f-98a5-ce7f152fba26.png"
             alt="WhatsApp"
-            className="w-5 h-5"
+            className="w-8 h-8"
           />
         </Button>
       </a>
