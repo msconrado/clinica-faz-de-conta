@@ -11,21 +11,23 @@ const About = () => {
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <Card className="bg-white shadow-lg md:w-1/2">
             <CardContent className="p-6">
-              <div className="space-y-4 text-lg text-neutral-dark font-como">
-                <p>Aqui, a imaginação ganha asas.</p>
-                <p>
+              <div className="space-y-4 text-lg text-neutral-dark font-como text-justify">
+                <p className="indent-8">
+                  Aqui, a imaginação ganha asas.
+                </p>
+                <p className="indent-8">
                   Somos uma Clínica multidisciplinar, especializada em atendimentos pediátricos, 
                   localizada em Belo Horizonte/ MG, em um bairro de fácil acesso. A Clínica Faz 
                   de Conta é um espaço lúdico, onde as crianças transformam a realidade ao seu 
                   redor, a partir de sua imaginação.
                 </p>
-                <p>
+                <p className="indent-8">
                   O nosso Faz de Conta valoriza a magia da imaginação e a criação de ambientes 
                   onde cada criança se sinta livre para explorar, aprender e crescer. Aqui, 
                   acreditamos que estimular brincando é uma forma poderosa de aprender sobre o 
                   mundo e sobre si mesma.
                 </p>
-                <p>
+                <p className="indent-8">
                   Agora imagine, sonhe e celebre, pois é assim que encontramos a essência do que 
                   significa acreditar, e o verdadeiro poder da criação com fé e cor.
                 </p>
