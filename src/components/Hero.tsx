@@ -30,15 +30,15 @@ const Hero = ({ whatsappNumber = "5531975051502" }: HeroProps) => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              className="bg-primary hover:bg-primary-dark text-white text-lg px-8 py-6 flex items-center gap-2 transition-colors duration-300"
+              className="bg-primary hover:bg-primary-dark text-white text-lg px-8 py-8 sm:py-6 flex items-center gap-2 transition-colors duration-300"
               onClick={handleWhatsAppClick}
             >
-              <MessageCircle className="w-6 h-6" />
+              <MessageCircle className="w-7 h-7" />
               Agende uma Consulta
             </Button>
             <Button
               variant="outline"
-              className="border-primary text-primary hover:bg-primary/10 text-lg px-8 py-6 transition-colors duration-300"
+              className="border-primary text-primary hover:bg-primary/10 text-lg px-8 py-8 sm:py-6 transition-colors duration-300"
               onClick={scrollToServices}
             >
               Conheça Nossos Serviços

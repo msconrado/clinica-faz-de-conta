@@ -9,9 +9,12 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const Structure = () => {
   const images = [
-    "https://source.unsplash.com/random/800x600/?clinic",
-    "https://source.unsplash.com/random/800x600/?hospital",
-    "https://source.unsplash.com/random/800x600/?therapy",
+    "/lovable-uploads/925f94b7-5d81-440a-820c-d59bdb4f9417.png",
+    "/lovable-uploads/3c8debd0-aef0-4038-ac12-3dc43e9db27d.png",
+    "/lovable-uploads/30ba239b-33ad-4de6-beba-aa291f6b3234.png",
+    "/lovable-uploads/5be317ec-0e33-450c-a7d5-6c55c5fc70fc.png",
+    "/lovable-uploads/48ab805f-f334-4849-9dfb-188c27b7fa6b.png",
+    "/lovable-uploads/5ff76e65-4dac-42fd-bf80-053c0f23437a.png"
   ];
 
   return (

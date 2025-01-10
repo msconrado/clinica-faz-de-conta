@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Instagram } from "lucide-react";
 
 const Team = () => {
   const team = [
@@ -8,6 +9,7 @@ const Team = () => {
       crefito: "CREFITO-4/370024.F",
       position: "Responsável técnica",
       image: "/lovable-uploads/352624de-41cb-4fad-8575-694ce529900a.png",
+      instagram: "https://www.instagram.com/mylenatabelini/"
     }
   ];
 
@@ -34,7 +36,15 @@ const Team = () => {
                   </h3>
                   <p className="text-neutral-dark font-como">{member.role}</p>
                   <p className="text-neutral-dark font-como">{member.crefito}</p>
-                  <p className="text-neutral-dark font-como">{member.position}</p>
+                  <p className="text-neutral-dark font-como mb-4">{member.position}</p>
+                  <a
+                    href={member.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center text-primary hover:text-primary-dark transition-colors"
+                  >
+                    <Instagram className="w-6 h-6" />
+                  </a>
                 </div>
               </CardContent>
             </Card>
