@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Activity, Heart, MessageSquare } from "lucide-react";
+import { Brain, Activity, Heart, MessageSquare, GraduationCap, Users2 } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -34,15 +34,15 @@ const additionalServices = [
   },
   {
     title: "Visitas Escolares",
-    icon: School,
+    icon: GraduationCap,
   },
   {
     title: "Apoio Parental",
-    icon: Users,
+    icon: Users2,
   },
   {
     title: "Intervenção Multidisciplinar",
-    icon: Users,
+    icon: Users2,
   },
   {
     title: "Orientação Familiar",
