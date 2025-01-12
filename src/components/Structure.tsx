@@ -40,7 +40,7 @@ const Structure = () => {
             Onde cada dia é um capítulo de uma história de força e amor.
           </p>
           <p className="text-lg text-neutral-dark font-como">
-            Conheça a Clínica Faz de conta, o nosso espaço em prol do desenvolvimento infanto-juvenil.
+            Conheça a Clínica Faz de Conta, o nosso espaço em prol do desenvolvimento infanto-juvenil.
           </p>
         </div>
         <Carousel className="w-full max-w-4xl mx-auto">
