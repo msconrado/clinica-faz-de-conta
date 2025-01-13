@@ -11,8 +11,12 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useState } from "react";
 
 const Structure = () => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const images = [
     "/lovable-uploads/925f94b7-5d81-440a-820c-d59bdb4f9417.png",
     "/lovable-uploads/3c8debd0-aef0-4038-ac12-3dc43e9db27d.png",
@@ -52,7 +56,10 @@ const Structure = () => {
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
-                <Dialog>
+                <Dialog open={isModalOpen && selectedImageIndex === index} onOpenChange={(open) => {
+                  setIsModalOpen(open);
+                  if (open) setSelectedImageIndex(index);
+                }}>
                   <DialogTrigger asChild>
                     <Card className="border-none shadow-lg cursor-pointer hover:opacity-90 transition-opacity">
                       <CardContent className="p-0">
@@ -65,11 +72,33 @@ const Structure = () => {
                     </Card>
                   </DialogTrigger>
                   <DialogContent className="max-w-[90vw] max-h-[90vh] p-0">
-                    <img
-                      src={image}
-                      alt={`Estrutura ${index + 1}`}
-                      className="w-full h-full object-contain rounded-lg"
-                    />
+                    <Carousel className="w-full">
+                      <CarouselContent>
+                        {images.map((modalImage, modalIndex) => (
+                          <CarouselItem key={modalIndex} className={modalIndex === selectedImageIndex ? 'block' : 'hidden'}>
+                            <img
+                              src={modalImage}
+                              alt={`Estrutura ${modalIndex + 1}`}
+                              className="w-full h-full object-contain rounded-lg"
+                            />
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      <CarouselPrevious 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
+                        }}
+                        className="left-2"
+                      />
+                      <CarouselNext 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setSelectedImageIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
+                        }}
+                        className="right-2"
+                      />
+                    </Carousel>
                   </DialogContent>
                 </Dialog>
               </CarouselItem>
