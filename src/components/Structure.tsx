@@ -6,6 +6,11 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const Structure = () => {
   const images = [
@@ -47,15 +52,26 @@ const Structure = () => {
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
-                <Card className="border-none shadow-lg">
-                  <CardContent className="p-0">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Card className="border-none shadow-lg cursor-pointer hover:opacity-90 transition-opacity">
+                      <CardContent className="p-0">
+                        <img
+                          src={image}
+                          alt={`Estrutura ${index + 1}`}
+                          className="w-full h-[400px] object-cover rounded-lg"
+                        />
+                      </CardContent>
+                    </Card>
+                  </DialogTrigger>
+                  <DialogContent className="max-w-[90vw] max-h-[90vh] p-0">
                     <img
                       src={image}
                       alt={`Estrutura ${index + 1}`}
-                      className="w-full h-[400px] object-cover rounded-lg"
+                      className="w-full h-full object-contain rounded-lg"
                     />
-                  </CardContent>
-                </Card>
+                  </DialogContent>
+                </Dialog>
               </CarouselItem>
             ))}
           </CarouselContent>
