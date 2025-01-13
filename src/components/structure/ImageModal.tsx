@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useEffect } from "react";
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -42,7 +43,9 @@ const ImageModal = ({
               delay: 4000,
             }),
           ]}
-          defaultSlide={selectedIndex}
+          opts={{
+            startIndex: selectedIndex,
+          }}
         >
           <CarouselContent>
             {images.map((modalImage, modalIndex) => (
