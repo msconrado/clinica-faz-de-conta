@@ -34,7 +34,7 @@ const About = () => {
               </div>
             </CardContent>
           </Card>
-          <div className="md:w-1/2">
+          <div className="hidden md:block md:w-1/2">
             <img
               src="/lovable-uploads/90873e2f-c383-4025-9573-a7003165d809.png"
               alt="Varinha mágica"
