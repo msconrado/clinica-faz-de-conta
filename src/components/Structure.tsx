@@ -92,11 +92,7 @@ const Structure = () => {
                       Navegue pelas imagens usando as setas
                     </DialogDescription>
                     
-                    <Carousel
-                      className="w-full"
-                      defaultIndex={selectedImageIndex}
-                      onSelect={(index) => setSelectedImageIndex(index)}
-                    >
+                    <Carousel className="w-full">
                       <CarouselContent>
                         {images.map((modalImage, modalIndex) => (
                           <CarouselItem key={modalIndex} className="flex items-center justify-center">
