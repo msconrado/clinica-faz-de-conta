@@ -9,6 +9,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
+  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useState } from "react";
@@ -72,33 +74,35 @@ const Structure = () => {
                     </Card>
                   </DialogTrigger>
                   <DialogContent className="max-w-[90vw] max-h-[90vh] p-0">
-                    <Carousel className="w-full">
-                      <CarouselContent>
-                        {images.map((modalImage, modalIndex) => (
-                          <CarouselItem key={modalIndex} className={modalIndex === selectedImageIndex ? 'block' : 'hidden'}>
-                            <img
-                              src={modalImage}
-                              alt={`Estrutura ${modalIndex + 1}`}
-                              className="w-full h-full object-contain rounded-lg"
-                            />
-                          </CarouselItem>
-                        ))}
-                      </CarouselContent>
-                      <CarouselPrevious 
+                    <DialogTitle className="sr-only">Galeria de Imagens</DialogTitle>
+                    <DialogDescription className="sr-only">Navegue pelas imagens usando as setas</DialogDescription>
+                    <div className="relative w-full h-full">
+                      <img
+                        src={images[selectedImageIndex]}
+                        alt={`Estrutura ${selectedImageIndex + 1}`}
+                        className="w-full h-full object-contain rounded-lg"
+                      />
+                      <button
                         onClick={(e) => {
                           e.stopPropagation();
                           setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
                         }}
-                        className="left-2"
-                      />
-                      <CarouselNext 
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full"
+                        aria-label="Imagem anterior"
+                      >
+                        ←
+                      </button>
+                      <button
                         onClick={(e) => {
                           e.stopPropagation();
                           setSelectedImageIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
                         }}
-                        className="right-2"
-                      />
-                    </Carousel>
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full"
+                        aria-label="Próxima imagem"
+                      >
+                        →
+                      </button>
+                    </div>
                   </DialogContent>
                 </Dialog>
               </CarouselItem>
