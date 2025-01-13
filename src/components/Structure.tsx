@@ -14,6 +14,8 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { useState } from "react";
+import Autoplay from "embla-carousel-autoplay";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Structure = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -54,7 +56,16 @@ const Structure = () => {
             Conheça a Clínica Faz de Conta, o nosso espaço em prol do desenvolvimento infanto-juvenil.
           </p>
         </div>
-        <Carousel className="w-full max-w-4xl mx-auto">
+
+        {/* Carrossel Principal */}
+        <Carousel
+          className="w-full max-w-4xl mx-auto"
+          plugins={[
+            Autoplay({
+              delay: 4000,
+            }),
+          ]}
+        >
           <CarouselContent>
             {images.map((image, index) => (
               <CarouselItem key={index}>
@@ -73,39 +84,53 @@ const Structure = () => {
                       </CardContent>
                     </Card>
                   </DialogTrigger>
+
+                  {/* Modal com Carrossel */}
                   <DialogContent className="max-w-[90vw] max-h-[90vh] p-0">
                     <DialogTitle className="sr-only">Galeria de Imagens</DialogTitle>
-                    <DialogDescription className="sr-only">Navegue pelas imagens usando as setas</DialogDescription>
-                    <div className="relative w-full h-full overflow-hidden">
-                      <div className="w-full h-full transition-transform duration-300 ease-in-out">
-                        <img
-                          key={selectedImageIndex}
-                          src={images[selectedImageIndex]}
-                          alt={`Estrutura ${selectedImageIndex + 1}`}
-                          className="w-full h-full object-contain rounded-lg transition-opacity duration-300"
-                        />
-                      </div>
+                    <DialogDescription className="sr-only">
+                      Navegue pelas imagens usando as setas
+                    </DialogDescription>
+                    
+                    <Carousel
+                      className="w-full"
+                      defaultIndex={selectedImageIndex}
+                      onSelect={(index) => setSelectedImageIndex(index)}
+                    >
+                      <CarouselContent>
+                        {images.map((modalImage, modalIndex) => (
+                          <CarouselItem key={modalIndex} className="flex items-center justify-center">
+                            <img
+                              src={modalImage}
+                              alt={`Estrutura ${modalIndex + 1}`}
+                              className="max-h-[80vh] object-contain"
+                            />
+                          </CarouselItem>
+                        ))}
+                      </CarouselContent>
+                      
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
                         }}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition-colors duration-200"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-3 rounded-full transition-colors duration-200"
                         aria-label="Imagem anterior"
                       >
-                        ←
+                        <ChevronLeft className="h-6 w-6" />
                       </button>
+                      
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           setSelectedImageIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
                         }}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition-colors duration-200"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-3 rounded-full transition-colors duration-200"
                         aria-label="Próxima imagem"
                       >
-                        →
+                        <ChevronRight className="h-6 w-6" />
                       </button>
-                    </div>
+                    </Carousel>
                   </DialogContent>
                 </Dialog>
               </CarouselItem>
