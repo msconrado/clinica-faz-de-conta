@@ -1,19 +1,7 @@
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 import { useState } from "react";
+import IntroText from "./structure/IntroText";
+import ImageCarousel from "./structure/ImageCarousel";
+import ImageModal from "./structure/ImageModal";
 
 const Structure = () => {
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -28,89 +16,40 @@ const Structure = () => {
     "/lovable-uploads/5ff76e65-4dac-42fd-bf80-053c0f23437a.png"
   ];
 
+  const handleNavigate = (direction: "prev" | "next") => {
+    setSelectedImageIndex((prev) => {
+      if (direction === "prev") {
+        return prev > 0 ? prev - 1 : images.length - 1;
+      } else {
+        return prev < images.length - 1 ? prev + 1 : 0;
+      }
+    });
+  };
+
   return (
     <section id="structure" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary-dark mb-8 font-hoss text-center uppercase">
           NOSSA ESTRUTURA
         </h2>
-        <div className="text-center mb-12 max-w-4xl mx-auto bg-accent-blue/10 p-8 rounded-lg shadow-lg">
-          <p className="text-lg text-neutral-dark font-como mb-4">
-            Um ambiente onde o lúdico encontra a responsabilidade e o respeito com o próximo.
-          </p>
-          <p className="text-lg text-neutral-dark font-como mb-4">
-            Onde as formas e cores se moldam tornando o espaço um palco da vida.
-          </p>
-          <p className="text-lg text-neutral-dark font-como mb-4">
-            Onde a arte e o cuidado andam juntos com um mesmo propósito: transformar a jornada.
-          </p>
-          <p className="text-lg text-neutral-dark font-como mb-4">
-            Onde suas vitórias são celebradas, e cada pequeno passo é uma grande conquista.
-          </p>
-          <p className="text-lg text-neutral-dark font-como mb-4">
-            Onde cada dia é um capítulo de uma história de força e amor.
-          </p>
-          <p className="text-lg text-neutral-dark font-como">
-            Conheça a Clínica Faz de Conta, o nosso espaço em prol do desenvolvimento infanto-juvenil.
-          </p>
-        </div>
-        <Carousel className="w-full max-w-4xl mx-auto">
-          <CarouselContent>
-            {images.map((image, index) => (
-              <CarouselItem key={index}>
-                <Dialog open={isModalOpen && selectedImageIndex === index} onOpenChange={(open) => {
-                  setIsModalOpen(open);
-                  if (open) setSelectedImageIndex(index);
-                }}>
-                  <DialogTrigger asChild>
-                    <Card className="border-none shadow-lg cursor-pointer hover:opacity-90 transition-opacity">
-                      <CardContent className="p-0">
-                        <img
-                          src={image}
-                          alt={`Estrutura ${index + 1}`}
-                          className="w-full h-[400px] object-cover rounded-lg"
-                        />
-                      </CardContent>
-                    </Card>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-[90vw] max-h-[90vh] p-0">
-                    <DialogTitle className="sr-only">Galeria de Imagens</DialogTitle>
-                    <DialogDescription className="sr-only">Navegue pelas imagens usando as setas</DialogDescription>
-                    <div className="relative w-full h-full">
-                      <img
-                        src={images[selectedImageIndex]}
-                        alt={`Estrutura ${selectedImageIndex + 1}`}
-                        className="w-full h-full object-contain rounded-lg"
-                      />
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
-                        }}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full"
-                        aria-label="Imagem anterior"
-                      >
-                        ←
-                      </button>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setSelectedImageIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
-                        }}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full"
-                        aria-label="Próxima imagem"
-                      >
-                        →
-                      </button>
-                    </div>
-                  </DialogContent>
-                </Dialog>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+        
+        <IntroText />
+
+        <ImageCarousel 
+          images={images}
+          onImageClick={(index) => {
+            setSelectedImageIndex(index);
+            setIsModalOpen(true);
+          }}
+        />
+
+        <ImageModal
+          isOpen={isModalOpen}
+          onOpenChange={setIsModalOpen}
+          images={images}
+          selectedIndex={selectedImageIndex}
+          onNavigate={handleNavigate}
+        />
       </div>
     </section>
   );
