@@ -76,18 +76,21 @@ const Structure = () => {
                   <DialogContent className="max-w-[90vw] max-h-[90vh] p-0">
                     <DialogTitle className="sr-only">Galeria de Imagens</DialogTitle>
                     <DialogDescription className="sr-only">Navegue pelas imagens usando as setas</DialogDescription>
-                    <div className="relative w-full h-full">
-                      <img
-                        src={images[selectedImageIndex]}
-                        alt={`Estrutura ${selectedImageIndex + 1}`}
-                        className="w-full h-full object-contain rounded-lg"
-                      />
+                    <div className="relative w-full h-full overflow-hidden">
+                      <div className="w-full h-full transition-transform duration-300 ease-in-out">
+                        <img
+                          key={selectedImageIndex}
+                          src={images[selectedImageIndex]}
+                          alt={`Estrutura ${selectedImageIndex + 1}`}
+                          className="w-full h-full object-contain rounded-lg transition-opacity duration-300"
+                        />
+                      </div>
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           setSelectedImageIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
                         }}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition-colors duration-200"
                         aria-label="Imagem anterior"
                       >
                         ←
@@ -97,7 +100,7 @@ const Structure = () => {
                           e.stopPropagation();
                           setSelectedImageIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
                         }}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full transition-colors duration-200"
                         aria-label="Próxima imagem"
                       >
                         →
