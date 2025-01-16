@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar } from "lucide-react";
+
 const LinkTree = () => {
   const handleWhatsAppClick = (message?: string) => {
     const text = message || "Olá! Gostaria de agendar uma consulta na Clínica Faz de Conta.";
-    window.open(`https://wa.me/5531975051502?text=${encodeURIComponent(text)}`, "_blank");
+    window.open(`https://wa.me/5531995300370?text=${encodeURIComponent(text)}`, "_blank");
   };
+
   const links = [
     {
       title: "Instagram",
@@ -44,6 +46,7 @@ const LinkTree = () => {
       bgColor: "bg-primary-light",
     },
   ];
+
   return (
     <section className="py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md mx-auto space-y-4">
@@ -90,4 +93,5 @@ const LinkTree = () => {
     </section>
   );
 };
+
 export default LinkTree;

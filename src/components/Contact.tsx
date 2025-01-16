@@ -20,12 +20,12 @@ const Contact = () => {
             </div>
             <h3 className="text-xl font-semibold text-primary-dark mb-2 font-hoss">WhatsApp</h3>
             <a 
-              href="https://wa.me/5531975051502" 
+              href="https://wa.me/5531995300370" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-neutral-dark hover:text-primary transition-colors font-como"
             >
-              (31) 97505-1502
+              (31) 99530-0370
             </a>
           </div>
 

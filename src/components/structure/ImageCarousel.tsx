@@ -20,8 +20,13 @@ const ImageCarousel = ({ images, onImageClick }: ImageCarouselProps) => {
       plugins={[
         Autoplay({
           delay: 4000,
+          stopOnInteraction: false,
         }),
       ]}
+      opts={{
+        loop: true,
+        dragFree: false,
+      }}
     >
       <CarouselContent>
         {images.map((image, index) => (
@@ -41,8 +46,8 @@ const ImageCarousel = ({ images, onImageClick }: ImageCarouselProps) => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
+      <CarouselPrevious className="hidden md:flex" />
+      <CarouselNext className="hidden md:flex" />
     </Carousel>
   );
 };
