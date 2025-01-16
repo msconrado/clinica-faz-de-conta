@@ -5,7 +5,7 @@ interface HeroProps {
   whatsappNumber?: string;
 }
 
-const Hero = ({ whatsappNumber = "5531975051502" }: HeroProps) => {
+const Hero = ({ whatsappNumber = "5531995300370" }: HeroProps) => {
   const handleWhatsAppClick = () => {
     const message = "Olá! Gostaria de agendar uma consulta na Clínica Faz de Conta.";
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");

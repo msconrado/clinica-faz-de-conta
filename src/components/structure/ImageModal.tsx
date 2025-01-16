@@ -41,10 +41,13 @@ const ImageModal = ({
           plugins={[
             Autoplay({
               delay: 4000,
+              stopOnInteraction: false,
             }),
           ]}
           opts={{
             startIndex: selectedIndex,
+            loop: true,
+            dragFree: false,
           }}
         >
           <CarouselContent>
