@@ -6,7 +6,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import Autoplay from "embla-carousel-autoplay";
 
 interface ImageCarouselProps {
   images: string[];
@@ -14,16 +13,9 @@ interface ImageCarouselProps {
 }
 
 const ImageCarousel = ({ images, onImageClick }: ImageCarouselProps) => {
-  const plugin = Autoplay({
-    delay: 4000,
-    stopOnInteraction: true,
-    stopOnMouseEnter: true,
-  });
-
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       <Carousel
-        plugins={[plugin]}
         opts={{
           loop: true,
           align: "start",
