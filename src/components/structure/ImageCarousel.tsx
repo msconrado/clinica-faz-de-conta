@@ -6,7 +6,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import Autoplay from "embla-carousel-autoplay";
 
 interface ImageCarouselProps {
   images: string[];
@@ -17,17 +16,11 @@ const ImageCarousel = ({ images, onImageClick }: ImageCarouselProps) => {
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       <Carousel
-        plugins={[
-          Autoplay({
-            delay: 4000,
-            stopOnInteraction: false,
-          }),
-        ]}
         opts={{
           loop: true,
-          dragFree: true,
-          containScroll: "trimSnaps",
-          align: "center",
+          align: "start",
+          skipSnaps: false,
+          dragFree: false
         }}
         className="w-full"
       >
@@ -43,6 +36,7 @@ const ImageCarousel = ({ images, onImageClick }: ImageCarouselProps) => {
                     src={image}
                     alt={`Estrutura ${index + 1}`}
                     className="w-full h-[300px] md:h-[400px] object-cover rounded-lg"
+                    loading="lazy"
                   />
                 </CardContent>
               </Card>
