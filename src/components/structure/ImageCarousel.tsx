@@ -18,8 +18,8 @@ const ImageCarousel = ({ images, onImageClick }: ImageCarouselProps) => {
       <Carousel
         opts={{
           loop: true,
-          align: "start",
-          skipSnaps: false,
+          align: "center",
+          containScroll: false,
           dragFree: false
         }}
         className="w-full"
