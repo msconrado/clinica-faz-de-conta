@@ -15,6 +15,7 @@ const ImageCarousel = ({ images, onImageClick }: ImageCarouselProps) => {
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       <Carousel
+        key={`carousel-${Date.now()}`}
         opts={{
           align: "start",
           loop: true,
@@ -25,7 +26,10 @@ const ImageCarousel = ({ images, onImageClick }: ImageCarouselProps) => {
       >
         <CarouselContent>
           {images.map((image, index) => (
-            <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
+            <CarouselItem 
+              key={`item-${index}-${Date.now()}`} 
+              className="basis-full md:basis-1/2 lg:basis-1/3"
+            >
               <div 
                 className="relative aspect-square"
                 onClick={() => onImageClick(index)}
