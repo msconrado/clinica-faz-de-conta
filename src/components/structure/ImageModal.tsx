@@ -10,8 +10,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import Autoplay from "embla-carousel-autoplay";
-import { useEffect } from "react";
 
 interface ImageModalProps {
   isOpen: boolean;
@@ -38,16 +36,12 @@ const ImageModal = ({
 
         <Carousel
           className="w-full"
-          plugins={[
-            Autoplay({
-              delay: 4000,
-              stopOnInteraction: false,
-            }),
-          ]}
           opts={{
             startIndex: selectedIndex,
             loop: true,
-            dragFree: false,
+            align: "center",
+            containScroll: false,
+            dragFree: false
           }}
         >
           <CarouselContent>
@@ -57,6 +51,7 @@ const ImageModal = ({
                   src={modalImage}
                   alt={`Estrutura ${modalIndex + 1}`}
                   className="max-h-[80vh] w-auto object-contain"
+                  loading="lazy"
                 />
               </CarouselItem>
             ))}
