@@ -5,7 +5,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
 
 interface ImageCarouselProps {
   images: string[];
@@ -17,29 +16,27 @@ const ImageCarousel = ({ images, onImageClick }: ImageCarouselProps) => {
     <div className="relative w-full max-w-4xl mx-auto">
       <Carousel
         opts={{
+          align: "start",
           loop: true,
-          align: "center",
-          containScroll: false,
-          dragFree: false
+          skipSnaps: false,
+          dragFree: false,
         }}
-        className="w-full"
+        className="w-full touch-pan-y"
       >
         <CarouselContent>
           {images.map((image, index) => (
-            <CarouselItem key={index} className="md:basis-2/3 lg:basis-1/2">
-              <Card 
-                className="border-none shadow-lg cursor-pointer hover:opacity-90 transition-opacity"
+            <CarouselItem key={index} className="basis-full md:basis-1/2 lg:basis-1/3">
+              <div 
+                className="relative aspect-square"
                 onClick={() => onImageClick(index)}
               >
-                <CardContent className="p-0">
-                  <img
-                    src={image}
-                    alt={`Estrutura ${index + 1}`}
-                    className="w-full h-[300px] md:h-[400px] object-cover rounded-lg"
-                    loading="lazy"
-                  />
-                </CardContent>
-              </Card>
+                <img
+                  src={image}
+                  alt={`Estrutura ${index + 1}`}
+                  className="w-full h-full object-cover rounded-lg cursor-pointer"
+                  loading="lazy"
+                />
+              </div>
             </CarouselItem>
           ))}
         </CarouselContent>
