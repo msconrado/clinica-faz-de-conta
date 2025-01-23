@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Permitir indexação de todas as seções importantes
+Allow: /#about
+Allow: /#services
+Allow: /#structure
+Allow: /#contact
+
+# Sitemap
+Sitemap: https://www.clinicafazdeconta.com.br/sitemap.xml
+
+# Taxa de crawling para não sobrecarregar o servidor
+Crawl-delay: 10
