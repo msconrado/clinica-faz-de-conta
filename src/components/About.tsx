@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { SEO_KEYWORDS } from "@/constants";
 
 const About = () => {
   return (
@@ -13,23 +14,16 @@ const About = () => {
             <CardContent className="p-6">
               <div className="space-y-4 text-lg text-neutral-dark font-como text-justify">
                 <p className="indent-8">
-                  Aqui, a imaginação ganha asas.
+                  Bem-vindo à Clínica Faz de Conta, onde a imaginação ganha asas e o desenvolvimento infantil encontra seu espaço ideal em Belo Horizonte.
                 </p>
                 <p className="indent-8">
-                  Somos uma Clínica multidisciplinar, especializada em atendimentos pediátricos, 
-                  localizada em Belo Horizonte/ MG, em um bairro de fácil acesso. A Clínica Faz 
-                  de Conta é um espaço lúdico, onde as crianças transformam a realidade ao seu 
-                  redor, a partir de sua imaginação.
+                  Somos uma clínica multidisciplinar especializada em atendimentos pediátricos, localizada no bairro Prado, em Belo Horizonte/MG. Nossa equipe é composta por profissionais especializados em fisioterapia pediátrica, terapia ocupacional, fonoaudiologia e desenvolvimento infantil.
                 </p>
                 <p className="indent-8">
-                  O nosso Faz de Conta valoriza a magia da imaginação e a criação de ambientes 
-                  onde cada criança se sinta livre para explorar, aprender e crescer. Aqui, 
-                  acreditamos que estimular brincando é uma forma poderosa de aprender sobre o 
-                  mundo e sobre si mesma.
+                  O nosso Faz de Conta valoriza a magia da imaginação e a criação de ambientes onde cada criança se sinta livre para explorar, aprender e crescer. Aqui, acreditamos que estimular brincando é uma forma poderosa de aprender sobre o Mundo e sobre si mesma.
                 </p>
                 <p className="indent-8">
-                  Agora imagine, sonhe e celebre, pois é assim que encontramos a essência do que 
-                  significa acreditar, e o verdadeiro poder da criação com fé e cor.
+                  Agora imagine, sonhe e celebre, pois é assim que encontramos a essência do que significa acreditar, e o verdadeiro poder da criação com fé e cor.
                 </p>
               </div>
             </CardContent>
@@ -39,6 +33,8 @@ const About = () => {
               src="/lovable-uploads/90873e2f-c383-4025-9573-a7003165d809.png"
               alt="Varinha mágica"
               className="w-full h-auto max-w-md mx-auto"
+              loading="lazy"
+              fetchPriority="high"
             />
           </div>
         </div>
