@@ -37,7 +37,7 @@ const About = () => {
               alt="Varinha mágica"
               className="w-full h-auto max-w-md mx-auto"
               loading="lazy"
-              fetchpriority="high"
+              fetchPriority="high"
             />
           </div>
         </div>
