@@ -17,16 +17,13 @@ const About = () => {
                   Bem-vindo à Clínica Faz de Conta, onde a imaginação ganha asas e o desenvolvimento infantil encontra seu espaço ideal em Belo Horizonte.
                 </p>
                 <p className="indent-8">
-                  Somos uma clínica multidisciplinar especializada em atendimentos pediátricos, estrategicamente localizada no bairro Prado, em Belo Horizonte/MG. Nossa equipe é composta por profissionais especializados em fisioterapia pediátrica, terapia ocupacional, fonoaudiologia e desenvolvimento infantil.
+                  Somos uma clínica multidisciplinar especializada em atendimentos pediátricos, localizada no bairro Prado, em Belo Horizonte/MG. Nossa equipe é composta por profissionais especializados em fisioterapia pediátrica, terapia ocupacional, fonoaudiologia e desenvolvimento infantil.
                 </p>
                 <p className="indent-8">
-                  Na Clínica Faz de Conta, transformamos a realidade através da imaginação das crianças. Nosso espaço lúdico foi cuidadosamente projetado para proporcionar um ambiente acolhedor e estimulante, onde cada criança se sente livre para explorar, aprender e se desenvolver.
+                  O nosso Faz de Conta valoriza a magia da imaginação e a criação de ambientes onde cada criança se sinta livre para explorar, aprender e crescer. Aqui, acreditamos que estimular brincando é uma forma poderosa de aprender sobre o Mundo e sobre si mesma.
                 </p>
                 <p className="indent-8">
-                  Oferecemos tratamentos especializados em fisioterapia respiratória infantil, integração sensorial, terapia ocupacional e fonoaudiologia, sempre com foco no desenvolvimento integral da criança. Nossa abordagem única combina técnicas terapêuticas modernas com elementos lúdicos, tornando cada sessão uma experiência envolvente e efetiva.
-                </p>
-                <p className="indent-8">
-                  Agora imagine, sonhe e celebre conosco, pois é assim que encontramos a essência do que significa acreditar, e o verdadeiro poder da criação com fé e cor. Venha conhecer nossa clínica infantil em BH e descubra como podemos ajudar no desenvolvimento do seu filho.
+                  Agora imagine, sonhe e celebre, pois é assim que encontramos a essência do que significa acreditar, e o verdadeiro poder da criação com fé e cor.
                 </p>
               </div>
             </CardContent>
