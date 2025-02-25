@@ -26,6 +26,7 @@ const About = () => {
                   Agora imagine, sonhe e celebre, pois é assim que encontramos a essência do que significa acreditar, e o verdadeiro poder da criação com fé e cor.
                 </p>
               </div>
+              
             </CardContent>
           </Card>
           <div className="hidden md:block md:w-1/2">
