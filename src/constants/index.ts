@@ -16,7 +16,7 @@ export const SITE_CONFIG = {
 export const SOCIAL_MEDIA = {
   instagram: "https://www.instagram.com/clinicafazdeconta/",
   facebook: "https://www.facebook.com/clinicafazdeconta/",
-  whatsapp: `https://wa.me/5531995300370`
+  whatsapp: `https://whatsapp.faleconosco.chat/redirect/37c093572?utm_source=Instagram&utm_campaign=visitas_perfil_agendamento&utm_medium=linktree&utm_content=link_bio`
 };
 
 export const SEO_KEYWORDS = [

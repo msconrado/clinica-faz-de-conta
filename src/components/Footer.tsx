@@ -20,7 +20,7 @@ const Footer = () => {
           
           <div className="flex space-x-6 mb-4 md:mb-0">
             <a
-              href="https://wa.me/5531995300370"
+              href="https://whatsapp.faleconosco.chat/redirect/9da0dc667?utm_source=Instagram&utm_campaign=visitas_perfil&utm_medium=bio&utm_content=link_bio"
               target="_blank"
               rel="noopener noreferrer"
               className="text-neutral-dark hover:text-primary transition-colors"
@@ -53,7 +53,7 @@ const Footer = () => {
       </Button>
 
       <a
-        href="https://wa.me/5531995300370"
+        href="https://whatsapp.faleconosco.chat/redirect/9da0dc667?utm_source=Instagram&utm_campaign=visitas_perfil&utm_medium=bio&utm_content=link_bio"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-4 left-4"
