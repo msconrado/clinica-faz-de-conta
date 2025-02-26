@@ -1,6 +1,10 @@
 import { Mail, MapPin, MessageCircle } from "lucide-react";
 
 const Contact = () => {
+  const handleWhatsAppClick = () => {
+    window.open("https://maps.app.goo.gl/r7Z3iuuS248cmyY59", "_blank");
+  };
+  
   return (
     <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -20,7 +24,7 @@ const Contact = () => {
             </div>
             <h3 className="text-xl font-semibold text-primary-dark mb-2 font-hoss">WhatsApp</h3>
             <a 
-              href="https://wa.me/5531995300370" 
+              href="https://whatsapp.faleconosco.chat/redirect/37c093572?utm_source=Instagram&utm_campaign=visitas_perfil_agendamento&utm_medium=linktree&utm_content=link_bio" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-neutral-dark hover:text-primary transition-colors font-como"
@@ -47,7 +51,10 @@ const Contact = () => {
               <MapPin className="w-6 h-6 text-primary" />
             </div>
             <h3 className="text-xl font-semibold text-primary-dark mb-2 font-hoss">Endereço</h3>
-            <address className="text-neutral-dark text-center not-italic font-como">
+            <address
+              className="text-neutral-dark text-center not-italic font-como"
+              onClick={() => handleWhatsAppClick()}
+            >
               Rua Safira, Nº 370, Bairro Prado<br />
               Belo Horizonte/MG, CEP 30.411.127
             </address>

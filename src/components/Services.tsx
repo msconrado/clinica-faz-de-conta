@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Activity, Heart, MessageSquare, GraduationCap, Users2 } from "lucide-react";
+import { Brain, Activity, Heart, GraduationCap, Users2, BookOpen, Bone, Baby, Hand, Mic, User2 } from "lucide-react";
+
 import {
   Carousel,
   CarouselContent,
@@ -18,12 +19,28 @@ const specialties = [
     icon: Activity,
   },
   {
+    title: "Fisioterapia ortopédica",
+    icon: Bone,
+  },
+  {
+    title: "Médico pediatra",
+    icon: Baby,
+  },
+  {
     title: "Terapia Ocupacional",
-    icon: Heart,
+    icon: Hand,
   },
   {
     title: "Fonoaudiologia",
-    icon: MessageSquare,
+    icon: Mic,
+  },
+  {
+    title: "Psicóloga",
+    icon: User2,
+  },
+  {
+    title: "Psicopedagoga",
+    icon: BookOpen,
   },
 ];
 

@@ -7,8 +7,6 @@ interface HeroProps {
 
 const Hero = ({ whatsappNumber = "5531995300370" }: HeroProps) => {
   const handleWhatsAppClick = () => {
-    const message = "Olá! Gostaria de agendar uma consulta na Clínica Faz de Conta.";
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   const scrollToServices = () => {
@@ -31,7 +29,9 @@ const Hero = ({ whatsappNumber = "5531995300370" }: HeroProps) => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               className="bg-primary hover:bg-primary-dark text-white text-lg px-8 py-8 sm:py-6 flex items-center gap-2 transition-colors duration-300"
-              onClick={handleWhatsAppClick}
+              onClick={() => {
+                window.open("https://whatsapp.faleconosco.chat/redirect/9da0dc667?utm_source=Instagram&utm_campaign=visitas_perfil&utm_medium=bio&utm_content=link_bio", "_blank");
+              }}
             >
               <MessageCircle className="w-7 h-7" />
               Agende uma Consulta

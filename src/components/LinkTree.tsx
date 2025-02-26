@@ -3,11 +3,6 @@ import { Card } from "@/components/ui/card";
 import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar } from "lucide-react";
 
 const LinkTree = () => {
-  const handleWhatsAppClick = (message?: string) => {
-    const text = message || "Olá! Gostaria de agendar uma consulta na Clínica Faz de Conta.";
-    window.open(`https://wa.me/5531995300370?text=${encodeURIComponent(text)}`, "_blank");
-  };
-
   const links = [
     {
       title: "Instagram",
@@ -24,7 +19,9 @@ const LinkTree = () => {
     {
       title: "WhatsApp",
       icon: <MessageCircle className="w-5 h-5" />,
-      onClick: () => handleWhatsAppClick(),
+      onClick: () => {
+        window.open("https://whatsapp.faleconosco.chat/redirect/9da0dc667?utm_source=Instagram&utm_campaign=visitas_perfil&utm_medium=bio&utm_content=link_bio", "_blank");
+      },
       bgColor: "bg-accent-orange",
     },
     {
@@ -36,13 +33,15 @@ const LinkTree = () => {
     {
       title: "Endereço",
       icon: <MapPin className="w-5 h-5" />,
-      url: "https://maps.google.com/?q=Rua+Safira,+370,+Prado,+Belo+Horizonte,+MG,+30411-127",
+      url: "https://maps.app.goo.gl/r7Z3iuuS248cmyY59",
       bgColor: "bg-secondary",
     },
     {
       title: "Agende sua Visita",
       icon: <Calendar className="w-5 h-5" />,
-      onClick: () => handleWhatsAppClick("Olá! Gostaria de agendar uma visita à Clínica Faz de Conta."),
+      onClick: () => {
+        window.open(`https://whatsapp.faleconosco.chat/redirect/37c093572?utm_source=Instagram&utm_campaign=visitas_perfil_agendamento&utm_medium=linktree&utm_content=link_bio`, "_blank");
+      },
       bgColor: "bg-primary-light",
     },
   ];
