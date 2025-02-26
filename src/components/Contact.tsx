@@ -51,8 +51,8 @@ const Contact = () => {
               <MapPin className="w-6 h-6 text-primary" />
             </div>
             <h3 className="text-xl font-semibold text-primary-dark mb-2 font-hoss">Endereço</h3>
-            <address 
-              className="text-neutral-dark text-center not-italic font-como",
+            <address
+              className="text-neutral-dark text-center not-italic font-como"
               onClick={() => handleWhatsAppClick()}
             >
               Rua Safira, Nº 370, Bairro Prado<br />
