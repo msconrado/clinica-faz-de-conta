@@ -13,6 +13,10 @@ const Navbar = () => {
     { name: "Contato", href: "#contact" },
   ];
 
+  const handleWhatsAppClick = () => {
+    window.open("https://whatsapp.faleconosco.chat/redirect/9da0dc667?utm_source=Instagram&utm_campaign=visitas_perfil&utm_medium=bio&utm_content=link_bio", "_blank");
+  };
+
   return (
     <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,7 +43,7 @@ const Navbar = () => {
               ))}
               <Button
                 className="bg-primary hover:bg-primary-dark text-white"
-                onClick={() => window.location.href = "#contact"}
+                onClick={() => handleWhatsAppClick()}
               >
                 Agende sua consulta
               </Button>
@@ -74,10 +78,7 @@ const Navbar = () => {
             ))}
             <Button
               className="w-full bg-primary hover:bg-primary-dark text-white mt-4"
-              onClick={() => {
-                window.location.href = "#contact";
-                setIsOpen(false);
-              }}
+              onClick={() => handleWhatsAppClick()}
             >
               Agende sua consulta
             </Button>
