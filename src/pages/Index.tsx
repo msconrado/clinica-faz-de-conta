@@ -1,33 +1,33 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Structure from "@/components/Structure";
-import Mission from "@/components/Mission";
-import Pillars from "@/components/Pillars";
-import Services from "@/components/Services";
-import Team from "@/components/Team";
-import Reviews from "@/components/Reviews";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import About from '@/components/About';
+import Structure from '@/components/Structure';
+import Mission from '@/components/Mission';
+import Pillars from '@/components/Pillars';
+import Services from '@/components/Services';
+import Team from '@/components/Team';
+import Reviews from '@/components/Reviews';
+import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 
 const Index = () => {
-  return (
-    <div className="min-h-screen bg-white">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Structure />
-        <Mission />
-        <Pillars />
-        <Services />
-        <Team />
-        <Reviews />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  );
+    return (
+        <div className="min-h-screen bg-white">
+            <Navbar />
+            <main>
+                <Hero />
+                <About />
+                <Structure />
+                <Mission />
+                <Pillars />
+                <Services />
+                <Team />
+                <Reviews />
+                <Contact />
+            </main>
+            <Footer />
+        </div>
+    );
 };
 
 export default Index;
