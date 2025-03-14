@@ -9,6 +9,7 @@ import Team from '@/components/Team';
 import Reviews from '@/components/Reviews';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import WhatsAppFloat from '@/components/WhatsAppFloat';
 
 const Index = () => {
     return (
@@ -26,6 +27,7 @@ const Index = () => {
                 <Contact />
             </main>
             <Footer />
+            <WhatsAppFloat />
         </div>
     );
 };
