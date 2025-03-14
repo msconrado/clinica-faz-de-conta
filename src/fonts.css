@@ -1,0 +1,25 @@
+/* Fontes personalizadas */
+@font-face {
+    font-family: 'Como';
+    src: url('/fonts/Como_Medium.otf') format('opentype'), url('/fonts/fonnts.com-Como_Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hoss Round';
+    src: url('/fonts/Hoss_Round_Medium.otf') format('opentype'), url('/fonts/fonnts.com-Hoss_Round_Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Fallback para fontes do Google */
+.font-como {
+    font-family: 'Como', 'Segoe UI', Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-hoss {
+    font-family: 'Hoss Round', 'Segoe UI', Roboto, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
