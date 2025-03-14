@@ -1,8 +1,24 @@
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
 import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar } from 'lucide-react';
+import { useEffect } from 'react';
 
 const LinkTree = () => {
+    useEffect(() => {
+        const wp = document.querySelectorAll('.wp-datalitics');
+
+        // Adicionar CSS para esconder o botão do Datalitics
+        wp.forEach((element) => {
+            element.setAttribute('style', 'display: none !important;');
+        });
+
+        return () => {
+            // Remover o estilo quando o componente for desmontado
+            wp.forEach((element) => {
+                element.removeAttribute('style');
+            });
+        };
+    }, []);
+
     const links = [
         {
             title: 'Instagram',
