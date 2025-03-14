@@ -1,4 +1,4 @@
-import { Instagram, ArrowUp, MessageCircle } from 'lucide-react';
+import { Instagram, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -15,13 +15,6 @@ const Footer = () => {
                     </div>
 
                     <div className="flex space-x-6 mb-4 md:mb-0">
-                        <a
-                            href="https://whatsapp.faleconosco.chat/redirect/d99778db0"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-neutral-dark hover:text-primary transition-colors">
-                            <MessageCircle className="w-6 h-6" />
-                        </a>
                         <a
                             href="https://www.instagram.com/clinicafazdeconta"
                             target="_blank"
@@ -40,8 +33,9 @@ const Footer = () => {
 
             <Button
                 onClick={scrollToTop}
-                className="fixed bottom-4 right-4 bg-primary hover:bg-primary-dark text-white rounded-full p-2 shadow-lg"
-                size="icon">
+                className="fixed bottom-6 left-6 bg-primary hover:bg-primary-dark text-white rounded-full p-3 shadow-lg z-50"
+                size="icon"
+                aria-label="Voltar ao topo">
                 <ArrowUp className="w-5 h-5" />
             </Button>
         </footer>
