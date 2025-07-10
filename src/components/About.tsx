@@ -1,5 +1,4 @@
 import { Card, CardContent } from '@/components/ui/card';
-import { SEO_KEYWORDS } from '@/constants';
 
 const About = () => {
     return (
@@ -16,9 +15,9 @@ const About = () => {
                                     ideal em Belo Horizonte.
                                 </p>
                                 <p className="indent-8">
-                                    Somos uma clínica multidisciplinar especializada em atendimentos pediátricos, localizada no bairro Prado, em Belo
-                                    Horizonte/MG. Nossa equipe é composta por profissionais especializados em fisioterapia pediátrica, terapia
-                                    ocupacional, fonoaudiologia e desenvolvimento infantil.
+                                    Somos uma clínica multidisciplinar especializada em atendimentos pediátricos, localizada no bairro Prado, em Belo 
+                                    Horizonte/MG. Nossa equipe é composta por profissionais formados em medicina pediátrica, fisioterapia, terapia 
+                                    ocupacional, fonoaudiologia e psicologia.
                                 </p>
                                 <p className="indent-8">
                                     O nosso Faz de Conta valoriza a magia da imaginação e a criação de ambientes onde cada criança se sinta livre para
