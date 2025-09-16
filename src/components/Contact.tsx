@@ -20,7 +20,7 @@ const Contact = () => {
                         </div>
                         <h3 className="text-xl font-semibold text-primary-dark mb-2 font-hoss">WhatsApp</h3>
                         <a
-                            href="https://whatsapp.faleconosco.chat/redirect/d99778db0"
+                            href="https://whatsapp.faleconosco.chat/redirect/538dc58ea"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-neutral-dark hover:text-primary transition-colors font-como">
