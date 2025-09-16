@@ -7,7 +7,7 @@ interface HeroProps {
 
 const Hero = ({ whatsappNumber = '5531995300370' }: HeroProps) => {
     const handleWhatsAppClick = () => {
-        window.open('https://whatsapp.faleconosco.chat/redirect/d99778db0', '_blank');
+        window.open('https://whatsapp.faleconosco.chat/redirect/538dc58ea', '_blank');
     };
 
     const scrollToServices = () => {

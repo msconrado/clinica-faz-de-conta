@@ -37,7 +37,7 @@ const LinkTree = () => {
             icon: <MessageCircle className="w-5 h-5" />,
             onClick: () => {
                 window.open(
-                    'https://whatsapp.faleconosco.chat/redirect/9da0dc667?utm_source=Instagram&utm_campaign=visitas_perfil&utm_medium=bio&utm_content=link_bio',
+                    'https://whatsapp.faleconosco.chat/redirect/7e770fc58',
                     '_blank'
                 );
             },
@@ -60,7 +60,7 @@ const LinkTree = () => {
             icon: <Calendar className="w-5 h-5" />,
             onClick: () => {
                 window.open(
-                    `https://whatsapp.faleconosco.chat/redirect/37c093572?utm_source=Instagram&utm_campaign=visitas_perfil_agendamento&utm_medium=linktree&utm_content=link_bio`,
+                    `https://whatsapp.faleconosco.chat/redirect/69bb554d6`,
                     '_blank'
                 );
             },
