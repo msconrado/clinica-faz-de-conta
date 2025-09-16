@@ -37,7 +37,7 @@ const specialties = [
         icon: Baby,
     },
     {
-        title: 'Médico Neurologista Pediatra',
+        title: 'Médico Pediatra Especializado em Neurologia',
         icon: BrainCircuit,
     },
     {
