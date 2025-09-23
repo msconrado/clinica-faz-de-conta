@@ -78,7 +78,7 @@ const LinkTree = () => {
                     '_blank'
                 );
             },
-            bgColor: 'bg-accent-green',
+            bgColor: 'bg-accent-orange',
         },
     ];
 
