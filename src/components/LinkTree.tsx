@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar } from 'lucide-react';
+import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar, BookOpen } from 'lucide-react';
 import { useEffect } from 'react';
 
 const LinkTree = () => {
@@ -65,6 +65,20 @@ const LinkTree = () => {
                 );
             },
             bgColor: 'bg-primary-light',
+        },
+        {
+            title: 'Inscrição Curso Avaliação Comportamental',
+            icon: <BookOpen className="w-5 h-5" />,
+            onClick: () => {
+                const mensagem = encodeURIComponent(
+                    'Olá! Gostaria de fazer minha inscrição para o curso de Avaliação Comportamental.'
+                );
+                window.open(
+                    `https://wa.me/5531995300370?text=${mensagem}`,
+                    '_blank'
+                );
+            },
+            bgColor: 'bg-accent-green',
         },
     ];
 
