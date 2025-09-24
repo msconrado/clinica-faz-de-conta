@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar } from 'lucide-react';
+import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar, BookOpen } from 'lucide-react';
 import { useEffect } from 'react';
 
 const LinkTree = () => {
@@ -20,6 +20,20 @@ const LinkTree = () => {
     }, []);
 
     const links = [
+          {
+            title: 'Inscrição Workshop Avaliação Comportamental',
+            icon: <BookOpen className="w-5 h-5" />,
+            onClick: () => {
+                const mensagem = encodeURIComponent(
+                    'Olá! Gostaria de fazer minha inscrição para o curso de Avaliação Comportamental.'
+                );
+                window.open(
+                    `https://wa.me/5531995300370?text=${mensagem}`,
+                    '_blank'
+                );
+            },
+            bgColor: 'bg-accent-yellow',
+        },
         {
             title: 'Instagram',
             icon: <Instagram className="w-5 h-5" />,
@@ -30,7 +44,7 @@ const LinkTree = () => {
             title: 'Website',
             icon: <Globe className="w-5 h-5" />,
             url: 'https://www.clinicafazdeconta.com.br',
-            bgColor: 'bg-accent-yellow',
+            bgColor: 'bg-secondary',
         },
         {
             title: 'WhatsApp',
@@ -66,6 +80,7 @@ const LinkTree = () => {
             },
             bgColor: 'bg-primary-light',
         },
+      
     ];
 
     return (
