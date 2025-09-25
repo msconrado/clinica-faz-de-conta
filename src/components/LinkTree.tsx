@@ -25,7 +25,7 @@ const LinkTree = () => {
             icon: <BookOpen className="w-5 h-5" />,
             onClick: () => {
                 const mensagem = encodeURIComponent(
-                    'Olá! Gostaria de fazer minha inscrição para o curso de Avaliação Comportamental.'
+                    'Olá! Gostaria de fazer minha inscrição para o workshop de Avaliação Comportamental.'
                 );
                 window.open(
                     `https://wa.me/5531995300370?text=${mensagem}`,
