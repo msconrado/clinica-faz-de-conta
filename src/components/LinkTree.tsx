@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar, BookOpen } from 'lucide-react';
+import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar, BookOpen, ShoppingCart } from 'lucide-react';
 import { useEffect } from 'react';
 
 const LinkTree = () => {
@@ -20,19 +20,27 @@ const LinkTree = () => {
     }, []);
 
     const links = [
-          {
-            title: 'Inscrição Workshop Avaliação Comportamental',
+        {
+            title: 'Entre para o grupo de lançamento do Workshop',
             icon: <BookOpen className="w-5 h-5" />,
             onClick: () => {
-                const mensagem = encodeURIComponent(
-                    'Olá! Gostaria de fazer minha inscrição para o workshop de Avaliação Comportamental.'
-                );
                 window.open(
-                    `https://wa.me/5531995300370?text=${mensagem}`,
+                    `https://chat.whatsapp.com/DxJ0WDKZl1IAYCzx8YhHXj?mode=wwt`,
                     '_blank'
                 );
             },
             bgColor: 'bg-accent-yellow',
+        },
+        {
+            title: 'COMPRE AGORA - Whorkshop Avaliação comportamental',
+            icon: <ShoppingCart className="w-5 h-5" />,
+            onClick: () => {
+                window.open(
+                    'https://www.asaas.com/c/1w4gpc2ae5u1ayg8',
+                    '_blank'
+                );
+            },
+            bgColor: 'bg-accent-orange',
         },
         {
             title: 'Instagram',
@@ -80,7 +88,7 @@ const LinkTree = () => {
             },
             bgColor: 'bg-primary-light',
         },
-      
+
     ];
 
     return (
