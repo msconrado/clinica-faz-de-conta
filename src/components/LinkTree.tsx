@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar, BookOpen } from 'lucide-react';
+import { Instagram, Globe, MessageCircle, Mail, MapPin, Calendar, BookOpen, ShoppingCart } from 'lucide-react';
 import { useEffect } from 'react';
 
 const LinkTree = () => {
@@ -33,7 +33,7 @@ const LinkTree = () => {
         },
         {
             title: 'COMPRE AGORA - Whorkshop Avaliação comportamental',
-            icon: <BookOpen className="w-5 h-5" />,
+            icon: <ShoppingCart className="w-5 h-5" />,
             onClick: () => {
                 window.open(
                     'https://www.asaas.com/c/1w4gpc2ae5u1ayg8',
