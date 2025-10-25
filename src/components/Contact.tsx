@@ -24,7 +24,7 @@ const Contact = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-neutral-dark hover:text-primary transition-colors font-como">
-                            (31) 99530-0370
+                            (31) 99736-4904
                         </a>
                     </div>
 
