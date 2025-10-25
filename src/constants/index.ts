@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
     name: 'Clínica Faz de Conta',
     domain: 'clinicafazdeconta.com.br',
-    phone: '+55 31 99530-0370',
+    phone: '+55 31 99736-4904',
     email: 'clinicafazdeconta@gmail.com',
     address: {
         street: 'Rua Safira',

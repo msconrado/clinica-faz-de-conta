@@ -64,7 +64,7 @@ const Scheduling = () => {
       
       // Envia mensagem para WhatsApp da clínica
       const message = `Olá! Gostaria de agendar uma consulta para ${format(date, "dd/MM/yyyy")} às ${time}. Serviço: ${service}. Nome: ${name}`;
-      const clinicPhone = "553198172503"; // Substitua pelo número da clínica
+      const clinicPhone = "5531997364904";
       const whatsappUrl = `https://wa.me/${clinicPhone}?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, "_blank");
       

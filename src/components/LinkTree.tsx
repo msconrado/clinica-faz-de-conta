@@ -6,13 +6,11 @@ const LinkTree = () => {
     useEffect(() => {
         const wp = document.querySelectorAll('.wp-datalitics');
 
-        // Adicionar CSS para esconder o botão do Datalitics
         wp.forEach((element) => {
             element.setAttribute('style', 'display: none !important;');
         });
 
         return () => {
-            // Remover o estilo quando o componente for desmontado
             wp.forEach((element) => {
                 element.removeAttribute('style');
             });
@@ -21,7 +19,7 @@ const LinkTree = () => {
 
     const links = [
         {
-            title: 'Entre para o grupo de lançamento do Workshop',
+            title: 'Grupo para profissionais: Cursos 2026',
             icon: <BookOpen className="w-5 h-5" />,
             onClick: () => {
                 window.open(
@@ -30,17 +28,6 @@ const LinkTree = () => {
                 );
             },
             bgColor: 'bg-accent-yellow',
-        },
-        {
-            title: 'COMPRE AGORA - Whorkshop Avaliação comportamental',
-            icon: <ShoppingCart className="w-5 h-5" />,
-            onClick: () => {
-                window.open(
-                    'https://www.asaas.com/c/1w4gpc2ae5u1ayg8',
-                    '_blank'
-                );
-            },
-            bgColor: 'bg-accent-orange',
         },
         {
             title: 'Instagram',
