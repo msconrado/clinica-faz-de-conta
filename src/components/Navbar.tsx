@@ -14,7 +14,7 @@ const Navbar = () => {
     ];
 
     const handleWhatsAppClick = () => {
-        window.open('https://whatsapp.faleconosco.chat/redirect/538dc58ea', '_blank');
+        window.open('https://whatsapp.faleconosco.chat/redirect/538dc58ea');
     };
 
     return (
