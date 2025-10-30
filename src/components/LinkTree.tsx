@@ -24,7 +24,6 @@ const LinkTree = () => {
             onClick: () => {
                 window.open(
                     `https://chat.whatsapp.com/DxJ0WDKZl1IAYCzx8YhHXj?mode=wwt`,
-                    '_blank'
                 );
             },
             bgColor: 'bg-accent-yellow',
@@ -47,7 +46,6 @@ const LinkTree = () => {
             onClick: () => {
                 window.open(
                     'https://whatsapp.faleconosco.chat/redirect/7e770fc58',
-                    '_blank'
                 );
             },
             bgColor: 'bg-accent-orange',
@@ -68,10 +66,7 @@ const LinkTree = () => {
             title: 'Agende sua Visita',
             icon: <Calendar className="w-5 h-5" />,
             onClick: () => {
-                window.open(
-                    `https://whatsapp.faleconosco.chat/redirect/69bb554d6`,
-                    '_blank'
-                );
+                window.open('https://whatsapp.faleconosco.chat/redirect/69bb554d6');
             },
             bgColor: 'bg-primary-light',
         },
@@ -103,7 +98,7 @@ const LinkTree = () => {
                                 {link.title}
                             </div>
                         ) : (
-                            <a href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                            <a href={link.url} rel="noopener noreferrer" className="flex items-center justify-center gap-2">
                                 {link.icon}
                                 {link.title}
                             </a>

@@ -2,7 +2,7 @@ import { Mail, MapPin, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
     const handleMapClick = () => {
-        window.open('https://maps.app.goo.gl/r7Z3iuuS248cmyY59', '_blank');
+        window.open('https://maps.app.goo.gl/r7Z3iuuS248cmyY59');
     };
 
     return (
@@ -21,7 +21,6 @@ const Contact = () => {
                         <h3 className="text-xl font-semibold text-primary-dark mb-2 font-hoss">WhatsApp</h3>
                         <a
                             href="https://whatsapp.faleconosco.chat/redirect/538dc58ea"
-                            target="_blank"
                             rel="noopener noreferrer"
                             className="text-neutral-dark hover:text-primary transition-colors font-como">
                             (31) 99736-4904
