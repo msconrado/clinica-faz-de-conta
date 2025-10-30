@@ -94,7 +94,6 @@ const LinkTree = () => {
                     >
                         <a
                             href={link.url}
-                            target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2"
                         >
