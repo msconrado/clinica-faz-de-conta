@@ -90,6 +90,7 @@ const LinkTree = () => {
                 {links.map((link, index) => (
                     <Button
                         key={index}
+                        asChild
                         className={`w-full h-12 ${link.bgColor} hover:opacity-90 transition-opacity duration-300 text-white font-como`}
                     >
                         <a
