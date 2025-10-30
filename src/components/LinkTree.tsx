@@ -94,6 +94,7 @@ const LinkTree = () => {
                         className={`w-full h-12 ${link.bgColor} hover:opacity-90 transition-opacity duration-300 text-white font-como`}
                     >
                         <a
+                            href={link.url}
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2"
                         >
