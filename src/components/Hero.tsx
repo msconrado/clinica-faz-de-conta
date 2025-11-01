@@ -6,10 +6,6 @@ interface HeroProps {
 }
 
 const Hero = ({ whatsappNumber = '5531997364904' }: HeroProps) => {
-    const handleWhatsAppClick = () => {
-        window.open('https://whatsapp.faleconosco.chat/redirect/538dc58ea');
-    };
-
     const scrollToServices = () => {
         const servicesSection = document.getElementById('services');
         servicesSection?.scrollIntoView({ behavior: 'smooth' });
@@ -29,10 +25,16 @@ const Hero = ({ whatsappNumber = '5531997364904' }: HeroProps) => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button
+                            asChild
                             className="bg-primary hover:bg-primary-dark text-white text-lg px-8 py-8 sm:py-6 flex items-center gap-2 transition-colors duration-300"
-                            onClick={handleWhatsAppClick}>
-                            <MessageCircle className="w-7 h-7" />
-                            Agende uma Consulta
+                        >
+                            <a
+                                href="https://whatsapp.faleconosco.chat/redirect/538dc58ea"
+                                rel="noopener noreferrer"
+                            >
+                                <MessageCircle className="w-7 h-7" />
+                                Agende uma Consulta
+                            </a>
                         </Button>
                         <Button
                             variant="outline"
