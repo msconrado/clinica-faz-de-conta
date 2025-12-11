@@ -1,69 +1,85 @@
-# Welcome to your Lovable project
+# 🏥 Clínica Faz de Conta
 
-## Project info
+Este repositório contém o código-fonte do sistema da **Clínica Faz de Conta**, um projeto desenvolvido para gerenciamento de pacientes, consultas e informações administrativas da clínica.
 
-**URL**: https://lovable.dev/projects/7120380c-d55c-4c18-b9a2-3b31eff012a7
+---
 
-## How can I edit this code?
+## 🚀 Tecnologias utilizadas
+- **React + TypeScript** — interface e lógica do front-end  
+- **Vite** — build rápido e otimizado  
+- **TailwindCSS / shadcn/ui** — estilização dos componentes  
+- **Supabase** — autenticação e banco de dados  
+- **Lucide Icons** — ícones utilizados na interface  
+- **Vercel** — deploy do projeto  
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## ⚙️ Funcionalidades principais
+- Cadastro e login de usuários com Supabase Auth  
+- Listagem e gerenciamento de pacientes  
+- Agendamento de consultas  
+- Edição e exclusão de registros  
+- Dashboard com informações da clínica  
+- Integração com WhatsApp para captação de leads  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7120380c-d55c-4c18-b9a2-3b31eff012a7) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 💻 Como rodar o projeto localmente
 
-**Use your preferred IDE**
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/msconrado/clinica-faz-de-conta.git
+   cd clinica-faz-de-conta
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. **Crie o arquivo `.env.local`** na raiz do projeto:
+   ```bash
+   NEXT_PUBLIC_SUPABASE_URL=URL_DO_SEU_SUPABASE
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=SUA_CHAVE_ANON
+   ```
 
-Follow these steps:
+4. **Rode o servidor de desenvolvimento**
+   ```bash
+   npm run dev
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+5. O projeto estará disponível em:
+   ```
+   http://localhost:5173
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## 📁 Estrutura principal do projeto
+```
+src/
+ ├─ components/       # Componentes reutilizáveis (botões, cards, modais, etc.)
+ ├─ constants/        # Constantes globais (links, números da clínica, textos fixos)
+ ├─ hooks/            # Hooks customizados de estado ou lógica de UI
+ ├─ lib/              # Configurações e integrações (ex: Supabase, APIs externas)
+ ├─ pages/            # Páginas principais do projeto (rotas)
+ ├─ services/         # Regras de negócio e comunicação com APIs
+ ├─ App.tsx           # Componente raiz do aplicativo
+ ├─ main.tsx          # Ponto de entrada da aplicação
+ ├─ index.css         # Estilos globais
+ ├─ fonts.css         # Configuração das fontes usadas
+ └─ vite-env.d.ts     # Tipagens do ambiente Vite/TypeScript
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🧩 Boas práticas para quem for contribuir
+- Use nomes claros para commits (`feat:`, `fix:`, `refactor:`, etc.)
+- Sempre crie branches separadas para novas features
+- Rode `npm run lint` antes de abrir PRs
+- Mantenha a estrutura e o padrão de componentes do projeto
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/7120380c-d55c-4c18-b9a2-3b31eff012a7) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+## 👨‍⚕️ Autor
+**Matheus Souza** — [@msconrado](https://github.com/msconrado)
