@@ -33,14 +33,6 @@ const specialties = [
         icon: Bone,
     },
     {
-        title: 'Médico Pediatra',
-        icon: Baby,
-    },
-    {
-        title: 'Médico Pediatra Especializado em Neurologia',
-        icon: BrainCircuit,
-    },
-    {
         title: 'Terapia Ocupacional',
         icon: Hand,
     },
