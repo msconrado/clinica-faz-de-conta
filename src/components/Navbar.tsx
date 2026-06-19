@@ -36,18 +36,11 @@ const Navbar = () => {
                                     {item.name}
                                 </a>
                             ))}
-                            <Button
-                                asChild
-                                className="bg-primary hover:bg-primary-dark text-white"
-                            >
-                                <a
-                                    href="https://whatsapp.faleconosco.chat/redirect/538dc58ea"
-                                    rel="noopener noreferrer"
-                                >
+                            <Button asChild className="bg-primary hover:bg-primary-dark text-white">
+                                <a href="https://whatsapp.faleconosco.chat/redirect/538dc58ea" rel="noopener noreferrer">
                                     Agende sua consulta
                                 </a>
                             </Button>
-
                         </div>
                     </div>
 

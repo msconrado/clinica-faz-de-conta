@@ -1,9 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import {
     Brain,
     Activity,
     Heart,
-    GraduationCap,
     Users2,
     BookOpen,
     Bone,
@@ -11,15 +10,23 @@ import {
     Hand,
     Mic,
     User2,
-    Stethoscope,
     BrainCircuit,
     UserCheck,
     Eye,
+    PencilLine,
+    UserRoundSearch,
+    Music4,
+    RotateCw,
+    AudioWaveform,
 } from 'lucide-react';
 
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const specialties = [
+    {
+        title: 'Avaliação Neuropsicológica',
+        icon: UserRoundSearch,
+    },
     {
         title: 'Fisioterapia Neurofuncional',
         icon: Brain,
@@ -49,35 +56,51 @@ const specialties = [
         icon: UserCheck,
     },
     {
-        title: 'Supervisão',
+        title: 'Supervisão ABA',
         icon: Eye,
     },
     {
         title: 'Psicopedagogia',
         icon: BookOpen,
     },
+    {
+        title: 'Musicoterapia',
+        icon: Music4,
+    },
+    {
+        title: 'Psicomotricidade',
+        icon: RotateCw,
+    },
+    {
+        title: 'TDCS - Estimulação Transcraniana por Corrente Contínua',
+        icon: AudioWaveform,
+    },
 ];
 
 const additionalServices = [
+    {
+        title: 'Tratamento Interdisciplinar',
+        icon: Users2,
+    },
     {
         title: 'Desenvolvimento Neuropsicomotor',
         icon: Brain,
     },
     {
-        title: 'Visitas Escolares',
-        icon: GraduationCap,
+        title: 'Núcleo Pedagógico',
+        icon: PencilLine,
     },
     {
-        title: 'Apoio Parental',
-        icon: Users2,
-    },
-    {
-        title: 'Intervenção Multidisciplinar',
+        title: 'Treinamento Parental',
         icon: Users2,
     },
     {
         title: 'Orientação Familiar',
         icon: Heart,
+    },
+    {
+        title: 'Protocolo TheraSuit',
+        icon: BrainCircuit,
     },
 ];
 
@@ -92,7 +115,7 @@ const Services = () => {
                             <CarouselContent className="-ml-2 md:-ml-4">
                                 {specialties.map((specialty, index) => (
                                     <CarouselItem key={index} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/4">
-                                        <Card className="border-2 border-accent-blue/20 hover:border-primary transition-colors h-full">
+                                        <Card className="border-2 border-accent-blue/20 hover:border-primary hover:cursor-pointer transition-colors h-full">
                                             <CardHeader>
                                                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
                                                     <specialty.icon className="w-6 h-6 text-primary" />
@@ -126,7 +149,7 @@ const Services = () => {
                             <CarouselContent className="-ml-2 md:-ml-4">
                                 {additionalServices.map((service, index) => (
                                     <CarouselItem key={index} className="pl-2 md:pl-4 sm:basis-1/2 md:basis-1/4">
-                                        <Card className="border-2 border-accent-blue/20 hover:border-primary transition-colors h-full">
+                                        <Card className="border-2 border-accent-blue/20 hover:border-primary hover:cursor-pointer transition-colors h-full">
                                             <CardHeader>
                                                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 mx-auto">
                                                     <service.icon className="w-6 h-6 text-primary" />
