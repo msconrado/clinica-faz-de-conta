@@ -2,7 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const Pillars = () => {
-    const pillars = ['Humanização', 'Respeito', 'Ética', 'Inclusão', 'Acessibilidade'];
+    const pillars = ['Acessibilidade', 'Humanização', 'Respeito', 'Ética', 'Inclusão'];
 
     return (
         <section id="pillars" className="py-16 px-4 sm:px-6 lg:px-8">

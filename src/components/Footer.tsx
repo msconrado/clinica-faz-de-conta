@@ -2,9 +2,9 @@ import { Instagram, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
+    // const scrollToTop = () => {
+    //     window.scrollTo({ top: 0, behavior: 'smooth' });
+    // };
 
     return (
         <footer className="bg-accent-blue/20 py-8 px-4 sm:px-6 lg:px-8 relative">
@@ -30,14 +30,9 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-
-            <Button
-                onClick={scrollToTop}
-                className="fixed bottom-6 left-6 bg-primary hover:bg-primary-dark text-white rounded-full p-3 shadow-lg z-50"
-                size="icon"
-                aria-label="Voltar ao topo">
-                <ArrowUp className="w-5 h-5" />
-            </Button>
+            <div className="fixed bottom-0 left-0 p-4 z-50">
+                <img src="/lovable-uploads/selo-atendimento-particular.png" alt="Decorative" className="w-52 h-auto" />
+            </div>
         </footer>
     );
 };
